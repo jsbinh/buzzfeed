@@ -1,0 +1,70 @@
+@charset "UTF-8";
+
+.title{
+	color: #07e;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	background: transparent;
+	line-height: 22px;
+	font: normal 21px/23px "ProximaNovaSemibold",Helvetica,Arial,sans-serif;
+	text-shadow: 1px 1px 0 white;
+}
+.title:hover{
+    color: #E32;
+    text-decoration: none !important;
+}
+a :hover{
+    text-decoration: none !important;
+}
+
+.head-title{
+    color: #E32;
+    font-size: 100%;
+    background: transparent;
+    line-height: 22px;
+    font: normal 21px/23px "ProximaNovaSemibold",Helvetica,Arial,sans-serif;
+}
+
+.small-meta{
+    color: #aaa;
+    font-size: 10px;
+}
+
+
+.title-demo2{
+    color: #222;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 90%;
+    background: transparent;
+    line-height: 22px;
+    font: normal 19px/23px "ProximaNovaSemibold",Helvetica,Arial,sans-serif;
+    text-shadow: 1px 1px 0 white;
+}
+.title-demo2:hover{
+    color: #E32;
+    text-decoration: none !important;
+}
+
+.title-demo2-medium{
+    color: #07e;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 90%;
+    background: transparent;
+    line-height: 22px;
+    font: normal 19px/23px "ProximaNovaSemibold",Helvetica,Arial,sans-serif;
+    text-shadow: 1px 1px 0 white;
+}
+
+.title-demo2-medium:hover{
+    /*color: #E32;*/
+    text-decoration: none !important;
+}
