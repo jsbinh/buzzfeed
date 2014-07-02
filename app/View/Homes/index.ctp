@@ -12,17 +12,11 @@
             </table>
         </div>
         <div class="col-md-4">
-            <table class="table">
+            <table class="table-bordered">
                 <tbody>
                     <tr>
-                        <td>
-                            <?php echo $this->Html->image('medium_img/demo-medium.jpg')?>
-                            <p class="title-demo2-medium">38 Wonderful Moments In Closed Caption History</p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                           &nbsp;
+                        <td width="350" height="250">
+                            Logo
                         </td>
                     </tr>
                 </tbody>
@@ -373,7 +367,13 @@
                     </tr>
                     <tr>
                         <td>
-                            <?php echo $this->Html->image('mini_img/demo3.jpg', array('width'=>205, 'height'=>90))?>
+                            <table class="table table-bordered" style="margin-bottom: 0px"  width="300" height="250">
+                                <tr>
+                                    <td>
+                                        Quang cao
+                                    </td>
+                                </tr>
+                            </table>
                         </td>
                     </tr>
                     <tr>

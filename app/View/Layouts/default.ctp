@@ -29,8 +29,8 @@ $cakeDescription = 'BuzzFeed';
 	<?php
 		echo $this->Html->meta('icon');
 
-		echo $this->Html->css(array('bootstrap', 'bootstrap.min', 'font-awesome.min', 'bootstrap-theme', 'bootstrap-theme.min', 'authorcode_scroller_amazon', 'layout'));
-        echo $this->Html->script(array('jquery', 'jquery-ui', 'bootstrap', 'bootstrap.min', 'slideShow'));
+		echo $this->Html->css(array('bootstrap', 'bootstrap.min', 'font-awesome.min', 'bootstrap-theme', 'bootstrap-theme.min', 'layout'));
+        echo $this->Html->script(array('jquery', 'jquery-ui', 'bootstrap', 'bootstrap.min', 'jssor.core', 'jssor.slider', 'jssor.utils'));
 
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
@@ -41,13 +41,15 @@ $cakeDescription = 'BuzzFeed';
 	<div id="container">
 		<div id="header">
 			<?php echo $this->element('header'); ?>
+            <?php echo $this->element('slider'); ?>
 		</div>
-		<div id="content">
+
+		<div id="content" style="padding-left: 15px; padding-right: 15px;">
 			<?php echo $this->Session->flash(); ?>
 
 			<?php echo $this->fetch('content'); ?>
 		</div>
-		<div id="footer">
+		<div id="footer" style="padding-left: 15px; padding-right: 15px;">
 
 		</div>
 	</div>

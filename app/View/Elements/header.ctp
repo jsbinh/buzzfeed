@@ -1,7 +1,19 @@
 <div class="container">
-    <?php echo $this->Html->image('logo-news.png', array('height'=>'50px')); ?>
+    <div class="col-md-3">
+        <?php //echo $this->Html->image('logo-news.png', array('height'=>'50px')); ?>
+        <h1 class="logo"><b>izzFeed</b></h1>
+    </div>
+    <div class="col-md-8">
+        <table class="table" style="margin-bottom: 0px">
+            <tr>
+                <td class="pull-right" style="padding: 1px;">
+                    <a href="https://magneticexchange.com/?p=80316" title="Magnetic Exchange - Instant exchange Perfect Money, Solid Trust Pay, EgoPay, Payza, Yandex Money, Payweb, RedPass, and Paxum"><img src="http://ad.magneticexchange.com/en_728_90.gif" alt="Magnetic Exchange - Instant exchange Perfect Money, Solid Trust Pay, EgoPay, Payza, Yandex Money, Payweb, RedPass, and Paxum" /></a>
+                </td>
+            </tr>
+        </table>
+    </div>
 </div>
-<nav class="navbar navbar-default nav-pills" role="navigation">
+<nav class="navbar navbar-default nav-pills" role="navigation" style="margin-bottom: 5px;">
         <div class="container">
             <!-- <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
@@ -16,19 +28,19 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav">
-                    <li>
+                    <li class="menu">
                         <a href="#"><b>NEWS</b></a>
                     </li>
-                    <li>
+                    <li class="menu">
                         <a href="#"><b>ENTERTAINMENT</b></a>
                     </li>
-                    <li>
+                    <li class="menu">
                         <a href="#"><b>LIFE</b></a>
                     </li>
-                    <li>
+                    <li class="menu">
                         <a href="#"><b>VIDEOS</b></a>
                     </li>
-                    <li>
+                    <li class="menu">
                         <a href="#"><b>FOREX INFO</b></a>
                     </li>
                 </ul>
