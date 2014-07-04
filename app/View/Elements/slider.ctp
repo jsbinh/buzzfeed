@@ -2,17 +2,17 @@
     jssor_slider1_starter = function (containerId) {
         var options = {
             $AutoPlay: false,                                    //[Optional] Whether to auto play, to enable slideshow, this option must be set to true, default value is false
-            $AutoPlaySteps: 7,                                  //[Optional] Steps to go for each navigation request (this options applys only when slideshow disabled), the default value is 1
-            $AutoPlayInterval: 4000,                            //[Optional] Interval (in milliseconds) to go for next slide since the previous stopped if the slider is auto playing, default value is 3000
+            $AutoPlaySteps: 9,                                  //[Optional] Steps to go for each navigation request (this options applys only when slideshow disabled), the default value is 1
+            $AutoPlayInterval: 5000,                            //[Optional] Interval (in milliseconds) to go for next slide since the previous stopped if the slider is auto playing, default value is 3000
             $PauseOnHover: 1,                               //[Optional] Whether to pause when mouse over if a slider is auto playing, 0 no pause, 1 pause for desktop, 2 pause for touch device, 3 pause for desktop and touch device, default value is 1
 
             $ArrowKeyNavigation: false,   			            //[Optional] Allows keyboard (arrow key) navigation or not, default value is false
-            $SlideDuration: 300,                                //[Optional] Specifies default duration (swipe) for slide in milliseconds, default value is 500
-            $MinDragOffsetToSlide: 20,                          //[Optional] Minimum drag offset to trigger slide , default value is 20
+            $SlideDuration: 5,                                //[Optional] Specifies default duration (swipe) for slide in milliseconds, default value is 500
+            $MinDragOffsetToSlide: 1,                          //[Optional] Minimum drag offset to trigger slide , default value is 20
             $SlideWidth: 200,                                   //[Optional] Width of every slide in pixels, default value is width of 'slides' container
             $SlideHeight: 150,                                //[Optional] Height of every slide in pixels, default value is height of 'slides' container
             $SlideSpacing: 4, 					                //[Optional] Space between each slide in pixels, default value is 0
-            $DisplayPieces: 15,                                  //[Optional] Number of pieces to display (the slideshow would be disabled if the value is set to greater than 1), the default value is 1
+            $DisplayPieces: 9,                                  //[Optional] Number of pieces to display (the slideshow would be disabled if the value is set to greater than 1), the default value is 1
             $ParkingPosition: 0,                              //[Optional] The offset position to park slide (this options applys only when slideshow disabled), default value is 0.
             $UISearchMode: 1,                                   //[Optional] The way (0 parellel, 1 recursive, default value is 1) to search UI components (slides container, loading screen, navigator container, arrow navigator container, thumbnail navigator container etc).
             $PlayOrientation: 1,                                //[Optional] Orientation to play slide (for auto play, navigation), 1 horizental, 2 vertical, 5 horizental reverse, 6 vertical reverse, default value is 1
@@ -31,9 +31,9 @@
 
             $ArrowNavigatorOptions: {
                 $Class: $JssorArrowNavigator$,              //[Requried] Class to create arrow navigator instance
-                $ChanceToShow: 1,                               //[Required] 0 Never, 1 Mouse Over, 2 Always
+                $ChanceToShow: 2,                               //[Required] 0 Never, 1 Mouse Over, 2 Always
                 $AutoCenter: 2,                                 //[Optional] Auto center navigator in parent container, 0 None, 1 Horizontal, 2 Vertical, 3 Both, default value is 0
-                $Steps: 7                                     //[Optional] Steps to go for each navigation request, default value is 1
+                $Steps: 9                                     //[Optional] Steps to go for each navigation request, default value is 1
             }
         };
 
@@ -46,7 +46,7 @@
             if (bodyWidth)
                 jssor_slider1.$SetScaleWidth(Math.min(bodyWidth, 1140));
             else
-                window.setTimeout(ScaleSlider, 30);
+                window.setTimeout(ScaleSlider, 20);
         }
 
         ScaleSlider();
@@ -66,7 +66,7 @@
 
 
 <div class="container" style="margin-bottom: 5px; padding-left: 15px; padding-right: 15px;" >
-    <div id="slider1_container" style="position: relative; top: 0px; left: 0px; width: 1500px; height: 150px; overflow: hidden; ">
+    <div id="slider1_container" style="position: relative; top: 0px; left: 0px; width: 1800px; height: 150px; overflow: hidden; ">
 
         <!-- Loading Screen -->
         <div u="loading" style="position: absolute; top: 0px; left: 0px;">
@@ -79,7 +79,7 @@
         </div>
 
         <!-- Slides Container -->
-        <div u="slides" style=" position: absolute; left: 0px; top: 0px; width: 1500px; height: 150px; overflow: hidden;">
+        <div u="slides" style=" position: absolute; left: 0px; top: 0px; width: 1800px; height: 150px; overflow: hidden;">
             <div><a href="#"><img u="image" src="img/ancient-lady/005.jpg" /></a></div>
             <div><img u="image" src="img/ancient-lady/006.jpg" /></div>
             <div><img u="image" src="img/ancient-lady/011.jpg" /></div>

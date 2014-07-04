@@ -1,7 +1,8 @@
 <div class="container">
     <div class="col-md-3">
-        <?php //echo $this->Html->image('logo-news.png', array('height'=>'50px')); ?>
-        <h1 class="logo"><b>izzFeed</b></h1>
+        <h1 class="logo">
+            <?php echo $this->Html->link('<b>izzFeed</b>', array('controller'=>'Homes', 'action'=>'index'), array('escape'=>false, 'style'=>'text-decoration: none')) ?>
+        </h1>
     </div>
     <div class="col-md-8">
         <table class="table" style="margin-bottom: 0px">
@@ -29,10 +30,10 @@
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav">
                     <li class="menu">
-                        <a href="#"><b>NEWS</b></a>
+                        <?php echo $this->Html->link('<b>NEWS</b>', array('controller'=>'News', 'action'=>'index'),array('escape'=>false,)) ?>
                     </li>
                     <li class="menu">
-                        <a href="#"><b>ENTERTAINMENT</b></a>
+                        <?php echo $this->Html->link('<b>ENTERTAINMENT</b>', array('controller'=>'Entertainments', 'action'=>'index'),array('escape'=>false,)) ?>
                     </li>
                     <li class="menu">
                         <a href="#"><b>LIFE</b></a>

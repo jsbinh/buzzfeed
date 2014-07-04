@@ -179,3 +179,6 @@ CakeLog::config('error', array(
 	'types' => array('warning', 'error', 'critical', 'alert', 'emergency'),
 	'file' => 'error',
 ));
+
+Configure::write('FILE_TYPE_UPLOAD', array('image/gif', 'image/jpeg', 'image/jpg', 'image/pjpeg', 'image/x-png', 'image/png'));
+Configure::write('TYPE_FILE_ERROR', 'Only upload file image gif/jpeg/jpg/png');

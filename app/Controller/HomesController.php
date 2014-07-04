@@ -6,6 +6,11 @@ class HomesController extends AppController{
 
 
     public function index(){
-        // echo 1;
+        
+    }
+
+    public function admin_index() {
+
+    	$this->redirect("/Homes");
     }
 }

@@ -83,3 +83,46 @@ a :hover{
     height: 50px;
     /*margin: 15px 0 0 0;*/
 }
+
+.table-edit{
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.post-title{
+    clear: left;
+    color: #333333;
+    font-family: "ProximaNovaSemibold",Helvetica,Arial,sans-serif;
+    font-size: 36px;
+    font-weight: normal;
+    line-height: 38px;
+    margin: 10px 0;
+    text-transform: none;
+    letter-spacing: normal;
+}
+
+.description{
+    font-size: 17px;
+    line-height: 23px;
+    color: #333;
+    font-family: "ProximaNovaRegular",Helvetica, Arial, sans-serif;
+    margin: 0px 0px 11px 0px;
+}
+
+.alert-success {
+    background: url("../img/success.png") no-repeat scroll 10px 50% transparent;
+    font-weight: bold;
+    text-indent: 25px;
+}
+
+.alert-error {
+    background: url("../img/error.png") no-repeat scroll 10px 50% transparent;
+    font-weight: bold;
+    text-indent: 25px;
+}
+
+.alert-warning {
+    background: url("../img/wraning.ico") no-repeat scroll 5px 9px transparent;
+    font-weight: bold;
+    text-indent: 15px;
+}

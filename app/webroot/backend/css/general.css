@@ -1,0 +1,307 @@
+@CHARSET "UTF-8";
+/******* GENERAL RESET *******/
+
+
+/* First Level UL List */
+#accordion {
+    margin:0;
+    padding:0;	
+    list-style:none;
+
+}
+.mailTitle
+{
+    font-family:tahoma;
+    font-weight: bold;
+    background: none repeat scroll 0 0 rgba(243, 243, 243, 0.85);
+
+}
+.vh {
+    background: none repeat scroll 0 0 #F9EDBE;
+    border-color: #F9EDBE;
+    color: #222222;
+    text-align: center;
+    padding-bottom:15px;
+    font-size: 16px;
+    font-weight: bold;
+
+}
+
+#accordion li {
+    list-style: none outside none;
+}
+
+#accordion li a {
+
+}
+
+/* Using CSS Sprite for menu item */
+#accordion li a.popular {
+
+}
+
+#accordion li a.popular:hover, .popularOver {
+
+}
+
+#accordion li a.category {
+
+}
+
+#accordion li a.category:hover, .categoryOver {
+
+}
+
+#accordion li a.comment {
+
+}
+
+#accordion li a.comment:hover, .commentOver {
+
+}
+
+
+/* Second Level UL List*/
+#accordion ul {
+    background:url(bg.gif) repeat-y 0 0;
+    width:268px;
+    margin:0;
+    padding:0;
+    display:none;	
+}
+
+#accordion ul li {
+    height:30px;
+}
+
+/* styling of submenu item */
+#accordion ul li a {
+    border-bottom: 1px dotted #777777;
+    height: 15px;
+    margin-left: 33px;
+    padding-top: 11px;
+    text-decoration: none;
+    text-indent: 0;
+    width: 240px;
+}
+
+/* remove border bottom of the last item */
+#accordion ul li a.last {
+    border-bottom: none;
+}	
+
+
+.valid_box
+
+{
+    width:150px;clear:both;
+    background:url(../img/valid.png) no-repeat left #edfce9;
+    border:1px #cceac4 solid;background-position:15px 10px;
+    padding:20px 20px 15px 60px;
+    margin:0 0 10px 0;
+    text-align: left;
+
+
+}
+
+.valid_box_buf
+
+{
+    width:150px;clear:both;
+    background:url(img/user_logout.png) no-repeat left #fce9e9;
+    border:1px #cceac4 solid;background-position:15px 10px;
+    padding:7px 20px 15px 60px;
+    margin:0 0 10px 0;
+    text-align: left;
+
+
+}
+.valid_box_buff
+
+{
+    width:150px;clear:both;
+    background:url(../img/user_logout.png) no-repeat left #fce9e9;
+    border:1px #cceac4 solid;background-position:15px 10px;
+    padding:7px 20px 15px 60px;
+    margin:0 0 10px 0;
+    text-align: left;
+
+
+} 
+.box-content1{
+    padding-left:400px;;
+}   
+
+
+.box-content2{
+    padding-left:150px;;
+}   
+
+#container1{
+    width: 600px;
+    margin: 40px auto;
+    text-align: left;
+}
+/******* /CONTAINER *******/
+/******* FORM *******/
+
+#customForm{
+    padding: 0 10px 10px;
+}
+#customForm label{
+    display: block;
+    color: #797979;
+    font-weight: 700;
+    line-height: 1.4em;
+}
+
+
+#customForm div span.error {
+    color: #E46C6E;
+}
+
+#customForm input{
+    width: 170px;
+    /*padding: 6px;
+    color: #949494;
+    font-family: Arial,  Verdana, Helvetica, sans-serif;
+    
+    border: 1px solid #cecece;*/
+}
+#customForm input.error{
+    background: #f8dbdb;
+    border-color: #e77776;
+}
+#customForm textarea{
+    width: 550px;
+    height: 80px;
+    padding: 6px;
+    color: #adaeae;
+    font-family: Arial,  Verdana, Helvetica, sans-serif;
+    font-style: italic;
+    font-size: 12px;
+    border: 1px solid #cecece;
+}
+#customForm textarea.error{
+    background: #f8dbdb;
+    border-color: #e77776;
+}
+
+#customForm #send{
+    background: #6f9ff1;
+    color: #fff;
+    font-weight: 700;
+    font-style: normal;
+    border: 0;
+    cursor: pointer;
+}
+#customForm #send:hover{
+    background: #79a7f1;
+}
+
+
+#customForm{
+    padding: 0 10px 10px;
+}
+/*
+#customForm1 label{
+    display: block;
+    color: #797979;
+    font-weight: 700;
+    line-height: 1.4em;
+}
+*/
+#errorFull{
+    color: red !important;
+    font-size: 11px;
+    font-style: italic;
+}
+
+
+#customForm1 div span.error {
+    color: #E46C6E;
+}
+#customForm1 input{
+    width: 23.4043%;
+    /*	padding: 6px;
+            color: #949494;
+            font-family: Arial,  Verdana, Helvetica, sans-serif;
+            font-size: 11px;
+            border: 1px solid #cecece;*/
+}
+#customForm1 input.error{
+    background: #f8dbdb;
+    border-color: #e77776;
+}
+#customForm1 textarea{
+    width: 550px;
+    height: 80px;
+    padding: 6px;
+    color: #adaeae;
+    font-family: Arial,  Verdana, Helvetica, sans-serif;
+    font-style: italic;
+    font-size: 12px;
+    border: 1px solid #cecece;
+}
+#customForm1 textarea.error{
+    background: #f8dbdb;
+    border-color: #e77776;
+}
+
+#customForm1 #send{
+    background: #6f9ff1;
+    color: #fff;
+    font-weight: 700;
+    font-style: normal;
+    border: 0;
+    cursor: pointer;
+}
+#customForm1 #send:hover{
+    background: #79a7f1;
+}
+
+
+#error{
+    margin-bottom: 20px;
+    border: 1px solid #efefef;
+}
+#error ul{
+    list-style: square;
+    padding: 5px;
+    font-size: 11px;
+}
+#error ul li{
+    list-style-position: inside;
+    line-height: 1.6em;
+}
+#error ul li strong{
+    color: #e46c6d;
+}
+#error.valid ul li strong{
+    color: #93d72e;
+}
+.clear{
+    clear: both;
+    height: 0;
+    visibility: hidden;
+    display: block;
+}
+
+#customForm div span {
+    color: #B1B1B1;
+    font-size: 11px;
+    font-style: italic;
+    margin-left: 10px;
+}
+#customForm1 div span {
+    color: #B1B1B1;
+    font-size: 11px;
+    font-style: italic;
+}
+/* Message error */
+div .error-message{
+    color: red ;  
+    index: 9999;
+}
+
+/******* /FORM *******/
