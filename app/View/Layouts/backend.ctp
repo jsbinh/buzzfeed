@@ -31,7 +31,7 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
         <meta name="okpay-verification" content="6270a581-1ed2-41cf-8726-b5604c96d8e3" />
         <!-- <meta name="p:domain_verify" content="09e8c9991f3c7eca9bd78659372afc61"/> -->
         <meta content="INDEX,FOLLOW" name="robots" />
-        <meta name="description" content="forexpam.com">
+        <meta name="description" content="izzfeed.com">
         <meta name="keywords" content="Free forex,investor,small business investor,business credit,small business idea,business,online business degree, forexpam">
 
         <?php
@@ -39,7 +39,6 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 
         echo $this->Html->css('/backend/css/bootstrap-cerulean');
         echo $this->Html->css('/backend/css/charisma-app');
-        echo $this->Html->css('/backend/css/jquery-ui-1.8.21.custom');
         echo $this->Html->css('/backend/css/general');
         echo $this->Html->css('/backend/css/jquery-ui');
 

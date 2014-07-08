@@ -46,14 +46,18 @@
                             <td class="center">
 
                                 <?php
-                                echo $this->Html->link('<i class="icon-zoom-in icon-white"></i>
-                                                            </span> ', array('controller' => 'Posts',
-                                    'action' => 'edit', $data['Post']['id']), array('escape' => false, 'class' => 'btn btn-success'));
-                                echo ' ';
-                                echo $this->Form->postLink('<i class="icon-trash icon-white"></i></span>',array('controller' => 'Posts', 'action' => 'delete', $data['Post']['id']), array('escape' => false, 'class' => 'btn btn-danger'), __('Do you want delete this account %s?', h($data['Post']['id'])));
-                                echo ' ';
                                 if(empty($data['Post']['approved'])){
-                                    echo $this->Form->postLink('<i class="icon-check icon-white"></i></span>',array('controller' => 'Posts', 'action' => 'approved', $data['Post']['id'], $data['Post']['user_id']), array('escape' => false, 'class' => 'btn btn-warning'), __('Do you want approved %s?', h($data['Post']['date'])));
+                                    echo $this->Html->link('<i class="icon-zoom-in icon-white"></i>
+                                                            </span> ', array('controller' => 'Posts',
+                                        'action' => 'edit', $data['Post']['id']), array('escape' => false, 'class' => 'btn btn-success'));
+                                    echo ' ';
+                                    echo $this->Form->postLink('<i class="icon-trash icon-white"></i></span>',array('controller' => 'Posts', 'action' => 'delete', $data['Post']['id']), array('escape' => false, 'class' => 'btn btn-danger'), __('Do you want delete this account %s?', $data['Post']['id']));
+                                    echo ' ';
+                                    echo $this->Form->postLink('<i class="icon-check icon-white"></i></span>',array('controller' => 'Posts', 'action' => 'approved', $data['Post']['id']), 
+                                        array(
+                                            'escape' => false,
+                                            'class' => 'btn btn-warning'),
+                                            __('Do you want approved?'));
                                 }else{
                                     echo '<p style="background-color:green; color:white">Approved</p>';
                                 }

@@ -6,7 +6,6 @@ class PostsController extends AppController{
     public $uses = array('Post', 'Category');
 
     public function index(){
-
     }
 
     public function admin_index() {
@@ -27,12 +26,12 @@ class PostsController extends AppController{
         $category = $this->Category->getAllCategory();
 
         if(!$this->Session->read('user')){
-            //$this->redirect(array('controller'=>'Homes', 'action'=>'index'));
+            $this->redirect(array('controller'=>'Homes', 'action'=>'index'));
         }
         $user = $this->Session->read('user');
 
         $this->layout = 'backend';
-        $path_img = WWW_ROOT.'upload\\';
+        $path_img = WWW_ROOT.'img\upload\\';
 
         if($this->request->is('post') || $this->request->is('put')){
             $data = $this->request->data;
@@ -56,9 +55,9 @@ class PostsController extends AppController{
                     }
                 }
             }
-            //$data['Post']['user_id'] = $user['User']['id'];
-            $data['Post']['user_id'] = 1;
+            $data['Post']['user_id'] = $user['User']['id'];
             $data['Post']['date'] = date('Y-m-d H:i:s');
+            $data['Post']['approved'] = 0;
             $this->Post->create();
             if($this->Post->save($data)){
                 $uploadfile = $path_img.$filename;
@@ -75,19 +74,16 @@ class PostsController extends AppController{
     }
 
     public function admin_edit($id) {
-        $this->layout = 'backend';
         //get all category
         $category = $this->Category->getAllCategory();
-        $this->Post->id = $id;
-        if(!$this->Post->exists()){
-            $this->redirect(array('controller'=>'Homes', 'action'=>'index'));
-        }
+
         if(!$this->Session->read('user')){
-            //$this->redirect(array('controller'=>'Homes', 'action'=>'index'));
+            $this->redirect(array('controller'=>'Homes', 'action'=>'index'));
         }
         $user = $this->Session->read('user');
 
-
+        $this->layout = 'backend';
+        $path_img = WWW_ROOT.'img\upload\\';
 
         if($this->request->is('post') || $this->request->is('put')){
             $data = $this->request->data;
@@ -111,10 +107,11 @@ class PostsController extends AppController{
                     }
                 }
             }
-            //$data['Post']['user_id'] = $user['User']['id'];
-            $data['Post']['user_id'] = 1;
+            $data['Post']['user_id'] = $user['User']['id'];
             $data['Post']['date'] = date('Y-m-d H:i:s');
-            $this->Post->create();
+            $data['Post']['approved'] = 0;
+            $this->Post->id = $id;
+            $this->Post->set($data);
             if($this->Post->save($data)){
                 $uploadfile = $path_img.$filename;
                 if(move_uploaded_file($url['tmp_name'], $uploadfile)){
@@ -126,8 +123,26 @@ class PostsController extends AppController{
             }
         }
 
+        $this->request->data = $this->Post->findById($id);
+
         $this->set('category', $category);
         $this->render('admin_detail');
+    }
+
+    public function admin_approved($id) {
+        $this->layout = 'backend';
+
+        if(!$this->Session->read('user')){
+            $this->redirect(array('controller' => 'users', 'action' => 'logout'));
+        }
+        if($this->Post->updateAll(array('Post.approved' => 1), array('Post.id'=>$id))){
+            $this->Session->setFlash('Approved post!', 'success');
+            $this->redirect(array('controller'=>'Posts', 'action' => 'index'));
+        }
+    }
+
+    public function admin_delete() {
+
     }
 
 }

@@ -182,3 +182,9 @@ CakeLog::config('error', array(
 
 Configure::write('FILE_TYPE_UPLOAD', array('image/gif', 'image/jpeg', 'image/jpg', 'image/pjpeg', 'image/x-png', 'image/png'));
 Configure::write('TYPE_FILE_ERROR', 'Only upload file image gif/jpeg/jpg/png');
+
+define('NEWS', 1);
+define('ENTERTAINMENT', 2);
+define('LIFE', 3);
+define('VIDEOS', 4);
+define('FOREX', 5);

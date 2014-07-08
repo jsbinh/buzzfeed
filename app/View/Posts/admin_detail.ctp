@@ -38,7 +38,7 @@
                 <tr>
                     <td width="15%">Upload image</td>
                     <td>
-                        <?php echo $this->Form->file('url', array('class'=>'span9', 'div'=> false, 'label'=>false, 'required'=>true)) ?>
+                        <?php echo $this->Form->file('url', array('class'=>'span9', 'div'=> false, 'label'=>false, 'required'=>false)) ?>
                     </td>
                 </tr>
                <tr>
@@ -46,7 +46,7 @@
                         <?php
                             echo $this->Form->submit('Save', array('class'=>'btn btn-primary', 'div'=>false, 'label'=>false));
                             echo ' &nbsp;';
-                            echo $this->Html->link('Back', array('controller'=>'News', 'action'=>'index'), array('class'=>'btn', 'div'=>false, 'label'=>false))
+                            echo $this->Html->link('Back', array('controller'=>'Posts', 'action'=>'index'), array('class'=>'btn', 'div'=>false, 'label'=>false))
                         ?>
                     </td>
                </tr>

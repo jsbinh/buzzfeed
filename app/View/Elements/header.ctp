@@ -54,10 +54,30 @@
                         <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://forexpam.com" data-text="forexpam" data-via="buzzfeed" data-related="trocvuong">Tweet</a>
                     </li>
                     <li>
-                        <a href="#">Search</a>
-                    </li>
-                    <li>
-                        <a href="#"><?php echo $this->Html->image('user20.png') ?></a>
+                        <?php if(!$this->Session->read('user')){ ?>
+                            <a href="#" data-toggle="modal" data-target="#login"> <?php echo $this->Html->image('user20.png') ?> </a>
+                        <?php }else{ ?>
+                            <div class="btn-group" style="margin-top: 10px;">
+                                <button class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
+                                <a href="#"> <?php echo $this->Html->image('user20.png') ?> </a>
+                                </button>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li>
+                                        <?php echo $this->Html->link('<span class="glyphicon glyphicon-edit"></span> Profile', array('controller'=>'Users', 'action'=>'profile'), array('escape'=>false)) ?>
+                                    </li>
+                                    <li>
+                                        <?php echo $this->Html->link('<span class="glyphicon glyphicon-fire"></span> Post', array('controller'=>'Posts', 'action'=>'index'), array('escape'=>false)) ?>
+                                    </li>
+                                    <li>
+                                        <?php echo $this->Html->link('<span class="glyphicon glyphicon-log-out"></span> Change password', array('controller'=>'Users', 'action'=>'changepass'), array('escape'=>false)) ?>
+                                    </li>
+                                    <hr>
+                                    <li>
+                                        <?php echo $this->Html->link('<span class="glyphicon glyphicon-log-out"></span> Logout', array('controller'=>'Users', 'action'=>'logout'), array('escape'=>false)) ?>
+                                    </li>
+                                </ul>
+                            </div>
+                        <?php } ?>
                     </li>
                 </ul>
             </div>
@@ -65,7 +85,7 @@
         </div>
         <!-- /.container -->
     </nav>
-
+    <?php echo $this->element('login'); ?>
     <!-- twitter -->
   <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
   </script>

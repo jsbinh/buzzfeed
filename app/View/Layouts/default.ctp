@@ -16,7 +16,7 @@
  * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
 
-$cakeDescription = 'BuzzFeed';
+$cakeDescription = 'izzFeed';
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -30,7 +30,7 @@ $cakeDescription = 'BuzzFeed';
 		echo $this->Html->meta('icon');
 
 		echo $this->Html->css(array('bootstrap', 'bootstrap.min', 'font-awesome.min', 'bootstrap-theme', 'bootstrap-theme.min', 'layout'));
-        echo $this->Html->script(array('jquery', 'jquery-ui', 'bootstrap', 'bootstrap.min', 'jssor.core', 'jssor.slider', 'jssor.utils'));
+        echo $this->Html->script(array('jquery', 'jquery-ui', 'bootstrap', 'jssor.core', 'jssor.slider', 'jssor.utils'));
 
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
