@@ -80,30 +80,35 @@
 
         <!-- Slides Container -->
         <div u="slides" style=" position: absolute; left: 0px; top: 0px; width: 1800px; height: 150px; overflow: hidden;">
-            <div><a href="#"><img u="image" src="img/ancient-lady/005.jpg" /></a></div>
-            <div><img u="image" src="img/ancient-lady/006.jpg" /></div>
-            <div><img u="image" src="img/ancient-lady/011.jpg" /></div>
-            <div><img u="image" src="img/ancient-lady/013.jpg" /></div>
-            <div><img u="image" src="img/ancient-lady/014.jpg" /></div>
-            <div><img u="image" src="img/ancient-lady/019.jpg" /></div>
-            <div><img u="image" src="img/ancient-lady/020.jpg" /></div>
-            <div><img u="image" src="img/ancient-lady/021.jpg" /></div>
-            <div><img u="image" src="img/ancient-lady/022.jpg" /></div>
-            <div><img u="image" src="img/ancient-lady/024.jpg" /></div>
-            <div><img u="image" src="img/ancient-lady/025.jpg" /></div>
-            <div><img u="image" src="img/ancient-lady/027.jpg" /></div>
-            <div><img u="image" src="img/ancient-lady/029.jpg" /></div>
-            <div><img u="image" src="img/ancient-lady/030.jpg" /></div>
-            <div><img u="image" src="img/ancient-lady/031.jpg" /></div>
-            <div><img u="image" src="img/ancient-lady/032.jpg" /></div>
-            <div><img u="image" src="img/ancient-lady/034.jpg" /></div>
-            <div><img u="image" src="img/ancient-lady/038.jpg" /></div>
-            <div><img u="image" src="img/ancient-lady/039.jpg" /></div>
-            <div><img u="image" src="img/ancient-lady/043.jpg" /></div>
-            <div><img u="image" src="img/ancient-lady/044.jpg" /></div>
-            <div><img u="image" src="img/ancient-lady/047.jpg" /></div>
-            <div><img u="image" src="img/ancient-lady/050.jpg" /></div>
-            <div><img u="image" src="img/ancient-lady/demo-large.jpg" /></div>
+
+            <?php
+                App::uses('ImageResizer', 'Utility');
+                $tool = new ImageResizer();
+
+                if(!empty($info)){
+                    foreach ($info as $data) {
+                        try{
+                            @$tool->prepare(WWW_ROOT.'img\upload\\'.$data['Post']['url']);
+                            @$tool->resize(200,150);
+                            @$tool->save(WWW_ROOT.'img\upload\\'.'slider'.$data['Post']['url']);
+                        }catch(Exception $e) {
+                            echo $e->getMessage();
+                        }
+            ?>
+                        <div>
+                            <?php echo $this->Html->image('upload/'.'slider'.$data['Post']['url'], array('width'=>200, 'height'=>150, 'u'=>'image', 'url'=>array('controller'=>'News', 'action'=>'view', $data['Post']['id'], $this->Post->convertToEn($data['Post']['title'])))) ?>
+                            <div>
+                                Testing...
+                            </div>
+                        </div>
+
+            <?php
+                    }
+
+                }
+            ?>
+
+            <!-- <div><img u="image" src="img/ancient-lady/005.jpg" /></div> -->
         </div>
 
         <!-- Bullet Navigator Skin Begin -->

@@ -127,3 +127,119 @@ a :hover{
     text-indent: 15px;
 }
 
+span.buzz_datetime{
+    display: block;
+    margin-top: 4px;
+    font-family: Arial,Helvetica,sans-serif;
+    text-transform: none;
+    letter-spacing: -.02em;
+    padding-left: 0px;
+    font-weight: normal;
+    font-size: 10px;
+    color: #999;
+}
+
+.user-bg{
+    margin: 2px 0px 20px 0px;
+}
+.c{
+    clear: both;
+    float: none;
+}
+.user-name{
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.meta{
+    overflow: hidden;
+    font-family: Arial,Helvetica,sans-serif;
+}
+
+.user-info {
+    border: none;
+    margin: 0px 30px 5px 0px;
+    padding-top: 0px;
+    float: left;
+}
+
+.author_title {
+    display: block;
+    width: 160px;
+    line-height: 12px;
+}
+.user-info .user-info-info {
+    float: left;
+}
+
+.ago {
+    display: none !important;
+}
+
+.social-links {
+    float: left;
+    margin-top: 8px;
+}
+
+div.fb-subscribe_btn {
+    margin-right: 0;
+    width: 190px;
+    height: 20px;
+}
+
+div.title-img-large{
+    margin-top: -150px;
+    font-size: 46px;
+    line-height: 46px;
+    position: absolute;
+    right: 20px;
+    bottom: 10px;
+    background: rgb(255,255,255);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+    filter: alpha(opacity=70);
+    -moz-opacity: 0.7;
+    -khtml-opacity: 0.7;
+    opacity: 0.7;
+    width: 360px;
+    clear: none;
+    float: right;
+}
+
+.splash-desc {
+    max-width: 360px;
+    color: black !important;
+}
+
+.title-img-large:hover{
+    color: white;
+    margin-top: -150px;
+    font-size: 46px;
+    line-height: 46px;
+    position: absolute;
+    right: 20px;
+    bottom: 10px;
+    background: #07e;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+    filter: alpha(opacity=70);
+    -moz-opacity: 0.7;
+    -khtml-opacity: 0.7;
+    opacity: 0.7;
+    width: 360px;
+    text-decoration: none !important;
+}
+
+.splash-overlay{
+    margin-bottom: 15px;
+    margin-right: 10px;
+}
+
+.current{
+    float: left;
+    padding: 6px 12px;
+    line-height: 20px;
+    text-decoration: none;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-left-width: 0;
+    background-color: #2E2EFE;
+}

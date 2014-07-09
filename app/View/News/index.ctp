@@ -1,5 +1,6 @@
 <?php
     App::uses('ImageResizer', 'Utility');
+    $tool = new ImageResizer();
     App::import('Model', 'Post');
     $this->Post = new Post();
 
@@ -11,7 +12,17 @@
                 <tbody>
                     <tr>
                         <td>
-                            <?php echo $this->Html->image('large_img/demo-large.jpg', array('class'=>'img-thumbnail'))?>
+                            <div class="img-large" id="splash-overlay" style="padding-left: 20px;">
+                                <?php
+                                    echo $this->Html->image('upload/'.$newsest['Post']['url'], array('height'=>250, 'width'=>745, 'url'=>array('controller'=>'News', 'action'=>'view', $newsest['Post']['id'], $this->Post->convertToEn($newsest['Post']['title']))));
+                                ?>
+
+                                <div class="title-img-large">
+                                    <div class="splash-desc">
+                                        <?php echo $this->Html->link($newsest['Post']['title'], array('controller'=>'News', 'action'=>'view', $newsest['Post']['id'], $this->Post->convertToEn($newsest['Post']['title'])), array()); ?>
+                                    </div>
+                                </div>
+                            </div>
                         </td>
                     </tr>
                 </tbody>
@@ -29,7 +40,7 @@
             </table>
         </div>
     </div>
-    <div class="row">
+    <div class="row-fluid sortable">
         <div class="col-md-6">
             <!-- <p class="head-title">&nbsp;</p> -->
             <table class="table table-striped table-condensed">
@@ -37,9 +48,13 @@
                     <?php
                         if(!empty($news)){
                             foreach ($news as $data) {
-                                ImageResizer::prepare($this->Html->image('upload/'.$data['Post']['url']));
-                                ImageResizer::resize(120,240);
-                                ImageResizer::save($this->Html->image('upload/'.'medium'.$data['Post']['url']))
+                                // try{
+                                //     @$tool->prepare(WWW_ROOT.'img\upload\\'.$data['Post']['url']);
+                                //     @$tool->resize(340,120);
+                                //     @$tool->save(WWW_ROOT.'img\upload\\'.'medium'.$data['Post']['url']);
+                                // }catch(Exception $e) {
+                                //     echo $e->getMessage();
+                                // }
                     ?>
                                 <tr>
                                     <td>
@@ -61,6 +76,15 @@
                             <?php }} ?>
                 </tbody>
             </table>
+            <?php if ($this->Paginator->numbers()): ?>
+                <div >
+                    <ul class="pagination">
+                        <?php echo '<li>' . $this->Paginator->prev(__('<<'), array(), null, array('class' => 'prev disabled')) . '</li>'; ?>
+                        <?php echo $this->Paginator->numbers(array('tag' => 'li', 'separator' => '')); ?>
+                        <?php echo '<li>' . $this->Paginator->next(__('>>'), array(), null, array('class' => 'next disabled')) . '</li>'; ?>
+                    </ul>
+                </div>
+            <?php endif;?>
         </div>
         <div class="col-md-4">
             <p class="head-title"><b>izzFeed News</b></p>

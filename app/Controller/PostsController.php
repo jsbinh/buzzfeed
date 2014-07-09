@@ -16,7 +16,7 @@ class PostsController extends AppController{
                 'delete_flg' => 0,
             ),
             'limit' => 25,
-            'order' => array('Post.id' => 'asc')
+            'order' => array('Post.id' => 'desc')
         );
         $this->set('posts', $this->paginate());
     }

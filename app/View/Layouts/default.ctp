@@ -23,13 +23,13 @@ $cakeDescription = 'izzFeed';
 <head>
 	<?php echo $this->Html->charset(); ?>
 	<title>
-		<?php echo $cakeDescription ?>:
+		<?php echo $cakeDescription ?> - 
 		<?php echo $title_for_layout; ?>
 	</title>
 	<?php
 		echo $this->Html->meta('icon');
 
-		echo $this->Html->css(array('bootstrap', 'bootstrap.min', 'font-awesome.min', 'bootstrap-theme', 'bootstrap-theme.min', 'layout'));
+		echo $this->Html->css(array('bootstrap.min', 'font-awesome.min', 'layout'));
         echo $this->Html->script(array('jquery', 'jquery-ui', 'bootstrap', 'jssor.core', 'jssor.slider', 'jssor.utils'));
 
 		echo $this->fetch('meta');
@@ -38,10 +38,22 @@ $cakeDescription = 'izzFeed';
 	?>
 </head>
 <body>
+	<?php
+        App::import('Model', 'Post');
+        $this->Post = new Post();
+
+        $info = $this->Post->find('all', array(
+            'conditions' => array(
+                'Post.approved' => 1,
+                'Post.delete_flg' => 0
+            ),
+            'fields' => array('id', 'title', 'url')
+        ));
+	?>
 	<div id="container">
 		<div id="header">
 			<?php echo $this->element('header'); ?>
-            <?php echo $this->element('slider'); ?>
+            <?php echo $this->element('slider', array('info'=>$info)); ?>
 		</div>
 
 		<div id="content" style="padding-left: 15px; padding-right: 15px;">

@@ -35,6 +35,12 @@ class UsersController extends AppController{
         $this->redirect(array('controller'=>'Homes', 'action'=>'index'));
     }
 
+    public function admin_logout() {
+        $this->Session->delete('user');
+        $this->redirect(array('controller'=>'Homes', 'action'=>'index'));
+    }
+
+
     public function profile() {
         
     }
