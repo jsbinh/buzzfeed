@@ -14,14 +14,16 @@
                     <div class="meta c">
                         <div class="user-info">
                             <div class="pull-left">
-                                <img src="http://s3-ak.buzzfed.com/static/2014-06/19/23/user_images/webdr07/mbvd-8140-1403235373-18_large.jpg">
+                                <?php
+                                    if(!empty($user)){
+                                        echo $this->Html->image('author/'.$user['User']['image'], array('width'=>35, 'height'=>35));
+                                    }
+                                ?>
                             </div>
 
                             <div class="user-info-info pull-right">
-                                <a data-print="author" rel:gt_act="user/username" rel:gt_label="editor/mbvd" class="user-name notranslate" href="/mbvd" rel="author">Michelle Broder Van Dyke</a>
+                                <a data-print="author" rel:gt_act="user/username" rel:gt_label="editor/mbvd" class="user-name notranslate" href="#" rel="author">Michelle Broder Van Dyke</a>
                                 <span class="author_title">BuzzFeed Staff</span>
-
-                                <span class="ago">posted<time data-print="date" datetime="2014-07-08T04:44:48Z">about&nbsp;2&nbsp;hours&nbsp;ago</time></span>
                             </div>
                         </div>
 
@@ -37,14 +39,13 @@
             </div>
 
 
-            <div class="addthis_sharing_toolbox"></div>
-
+            <div class="addthis_sharing_toolbox space_share"></div>
 
             <div class="content">
                 <?php echo $news['Post']['content'] ?>
             </div>
 
-            <div class="addthis_sharing_toolbox"></div>
+            <div class="addthis_sharing_toolbox space_share"></div>
             <!-- Go to www.addthis.com/dashboard to customize your tools -->
             <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-53bbb04550725748"></script>
 

@@ -1,4 +1,9 @@
-<?php echo $this->Html->script('/backend/js/js.backend'); ?>
+<?php
+    echo $this->Html->script('/backend/js/js.backend');
+
+    App::import('Model', 'User');
+    $this->User = new User();
+?>
 <script type='text/javascript'>
     $(document).ready(function() {
         setTimeout(function() {
@@ -18,11 +23,12 @@
         <table class="table table-striped table-bordered bootstrap-datatable datatable">
             <thead>
                 <tr>
-                    <th width="15%">Username</th>
-                    <th width="30%">Title</th>
+                    <th width="12%">Username</th>
+                    <th width="6%">Category</th>
+                    <th width="27%">Title</th>
                     <th width="25%">Sumary</th>
                     <th width="15%">Date post</th>
-                    <th width="15%">Action</th>
+                    <th width="15%" class="nowrap">Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -32,7 +38,10 @@
                         ?>
                         <tr>
                             <td>
-                                <?php echo h($data['Post']['user_id']); ?>
+                                <?php echo $this->User->getUsernameById(h($data['Post']['user_id'])); ?>
+                            </td>
+                            <td>
+                                <?php echo h($data['Post']['category_id']) ?>
                             </td>
                             <td>
                                 <?php echo h($data['Post']['title']) ?>
@@ -43,7 +52,7 @@
                             <td class="center">
                                 <?php echo $data['Post']['date']; ?>
                             </td>
-                            <td class="center">
+                            <td class="center nowrap">
 
                                 <?php
                                 if(empty($data['Post']['approved'])){

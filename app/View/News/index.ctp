@@ -1,8 +1,9 @@
 <?php
     App::uses('ImageResizer', 'Utility');
     $tool = new ImageResizer();
-    App::import('Model', 'Post');
+    App::import('Model', array('Post', 'User'));
     $this->Post = new Post();
+    $this->User = new User();
 
 ?>
 <div class="container">
@@ -14,12 +15,12 @@
                         <td>
                             <div class="img-large" id="splash-overlay" style="padding-left: 20px;">
                                 <?php
-                                    echo $this->Html->image('upload/'.$newsest['Post']['url'], array('height'=>250, 'width'=>745, 'url'=>array('controller'=>'News', 'action'=>'view', $newsest['Post']['id'], $this->Post->convertToEn($newsest['Post']['title']))));
+                                    echo $this->Html->image('upload/'.$newsest['Post']['url'], array('height'=>280, 'width'=>745, 'url'=>array('controller'=>'News', 'action'=>'view', $newsest['Post']['id'], $this->Post->convertToEn($newsest['Post']['title']))));
                                 ?>
 
                                 <div class="title-img-large">
                                     <div class="splash-desc">
-                                        <?php echo $this->Html->link($newsest['Post']['title'], array('controller'=>'News', 'action'=>'view', $newsest['Post']['id'], $this->Post->convertToEn($newsest['Post']['title'])), array()); ?>
+                                        <?php echo $this->Html->link($newsest['Post']['title'], array('controller'=>'News', 'action'=>'view', $newsest['Post']['id'], $this->Post->convertToEn($newsest['Post']['title'])), array('class'=>'img_url')); ?>
                                     </div>
                                 </div>
                             </div>
@@ -32,7 +33,7 @@
             <table class="table-bordered">
                 <tbody>
                     <tr>
-                        <td width="350" height="250">
+                        <td width="336" height="280">
                             Logo
                         </td>
                     </tr>
@@ -48,13 +49,6 @@
                     <?php
                         if(!empty($news)){
                             foreach ($news as $data) {
-                                // try{
-                                //     @$tool->prepare(WWW_ROOT.'img\upload\\'.$data['Post']['url']);
-                                //     @$tool->resize(340,120);
-                                //     @$tool->save(WWW_ROOT.'img\upload\\'.'medium'.$data['Post']['url']);
-                                // }catch(Exception $e) {
-                                //     echo $e->getMessage();
-                                // }
                     ?>
                                 <tr>
                                     <td>
@@ -68,7 +62,10 @@
                                                 echo $data['Post']['summary'];
                                             ?>
                                         </p>
-                                        <?php echo $this->Html->image('user8.png'); ?> <span class="small-meta">Andrew Kaczynski</span> &nbsp;
+                                        <?php
+                                            $user_info = $this->User->getUsername($data['Post']['user_id']);
+                                        ?>
+                                        <?php echo $this->Html->image('author/'.$user_info['User']['image'], array('width'=>40, 'height'=>40)); ?> <span class="small-meta"><?php echo $user_info['User']['fullname'] ?></span> &nbsp;
                                         <?php echo $this->Html->image('time8.png'); ?> <span class="small-meta">15 minutes ago</span> &nbsp;
                                          <?php echo $this->Html->image('comment9.png'); ?> <span class="small-meta">4 responses</span>
                                     </td>
@@ -86,9 +83,10 @@
                 </div>
             <?php endif;?>
         </div>
+        <!-- <div style="clear: both"></div> -->
         <div class="col-md-4">
             <p class="head-title"><b>izzFeed News</b></p>
-            <?php echo $this->element('column2_news', $news); ?>
+            <?php echo $this->element('column2_news', array('news' => $news_col)); ?>
         </div>
         <div class="col-md-2">
             <p class="head-title"><b>Trending</b></p>

@@ -1,3 +1,11 @@
+<?php
+    App::uses('ImageResizer', 'Utility');
+    $tool = new ImageResizer();
+    App::import('Model', array('Post', 'User'));
+    $this->Post = new Post();
+    $this->User = new User();
+
+?>
 <div class="container">
     <div class="row">
         <div class="col-md-8" style="margin-bottom: 10px">
@@ -5,7 +13,17 @@
                 <tbody>
                     <tr>
                         <td>
-                            <?php echo $this->Html->image('large_img/demo-large.jpg')?>
+                            <div class="img-large" id="splash-overlay" style="padding-left: 20px;">
+                                <?php
+                                    echo $this->Html->image('upload/'.$newsest['Post']['url'], array('height'=>280, 'width'=>745, 'url'=>array('controller'=>'News', 'action'=>'view', $newsest['Post']['id'], $this->Post->convertToEn($newsest['Post']['title']))));
+                                ?>
+
+                                <div class="title-img-large">
+                                    <div class="splash-desc">
+                                        <?php echo $this->Html->link($newsest['Post']['title'], array('controller'=>'News', 'action'=>'view', $newsest['Post']['id'], $this->Post->convertToEn($newsest['Post']['title'])), array('class'=>'img_url')); ?>
+                                    </div>
+                                </div>
+                            </div>
                         </td>
                     </tr>
                 </tbody>
@@ -15,7 +33,7 @@
             <table class="table-bordered">
                 <tbody>
                     <tr>
-                        <td width="350" height="250">
+                        <td width="336" height="280">
                             Logo
                         </td>
                     </tr>
@@ -23,186 +41,57 @@
             </table>
         </div>
     </div>
-    <div class="row">
+    <div class="row-fluid sortable">
         <div class="col-md-6">
             <!-- <p class="head-title">&nbsp;</p> -->
             <table class="table table-striped table-condensed">
                 <tbody>
-                    <tr>
-                        <td>
-                            <?php echo $this->Html->image('mini_img/demo1.jpg')?>
-                        </td>
-                        <td>
-                            <a href="#" class="title">Olivia Palermo’s Husband Johannes Huebl Is So Good-Looking It Hurts</a>
-                            <p><b>VH1 tweeted Monday night to submit questions for singer Robin Thicke using the hashtag #AskThicke. </b>People on Twitter took the opportunity to question his treatment of women.</p>
-
-                            <?php echo $this->Html->image('user8.png'); ?> <span class="small-meta">Andrew Kaczynski</span> &nbsp;
-                            <?php echo $this->Html->image('time8.png'); ?> <span class="small-meta">15 minutes ago</span> &nbsp;
-                             <?php echo $this->Html->image('comment9.png'); ?> <span class="small-meta">4 responses</span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <?php echo $this->Html->image('mini_img/demo1.jpg')?>
-                        </td>
-                        <td>
-                            <a href="#" class="title">Robin Thicke’s Planned Q&A Session On Twitter Flooded With Queries About Misogyny</a>
-                            <p><b>VH1 tweeted Monday night to submit questions for singer Robin Thicke using the hashtag #AskThicke. </b>People on Twitter took the opportunity to question his treatment of women.</p>
-
-                            <?php echo $this->Html->image('user8.png'); ?> <span class="small-meta">Andrew Kaczynski</span> &nbsp;
-                            <?php echo $this->Html->image('time8.png'); ?> <span class="small-meta">15 minutes ago</span> &nbsp;
-                             <?php echo $this->Html->image('comment9.png'); ?> <span class="small-meta">4 responses</span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <?php echo $this->Html->image('mini_img/demo1.jpg')?>
-                        </td>
-                        <td>
-                            <a href="#" class="title">Robin Thicke’s Planned Q&A Session On Twitter Flooded With Queries About Misogyny</a>
-                            <p><b>VH1 tweeted Monday night to submit questions for singer Robin Thicke using the hashtag #AskThicke. </b>People on Twitter took the opportunity to question his treatment of women.</p>
-
-                            <?php echo $this->Html->image('user8.png'); ?> <span class="small-meta">Andrew Kaczynski</span> &nbsp;
-                            <?php echo $this->Html->image('time8.png'); ?> <span class="small-meta">15 minutes ago</span> &nbsp;
-                             <?php echo $this->Html->image('comment9.png'); ?> <span class="small-meta">4 responses</span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <?php echo $this->Html->image('mini_img/demo1.jpg')?>
-                        </td>
-                        <td>
-                            <a href="#" class="title">Robin Thicke’s Planned Q&A Session On Twitter Flooded With Queries About Misogyny</a>
-                            <p><b>VH1 tweeted Monday night to submit questions for singer Robin Thicke using the hashtag #AskThicke. </b>People on Twitter took the opportunity to question his treatment of women.</p>
-
-                            <?php echo $this->Html->image('user8.png'); ?> <span class="small-meta">Andrew Kaczynski</span> &nbsp;
-                            <?php echo $this->Html->image('time8.png'); ?> <span class="small-meta">15 minutes ago</span> &nbsp;
-                             <?php echo $this->Html->image('comment9.png'); ?> <span class="small-meta">4 responses</span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <?php echo $this->Html->image('mini_img/demo1.jpg')?>
-                        </td>
-                        <td>
-                            <a href="#" class="title">Robin Thicke’s Planned Q&A Session On Twitter Flooded With Queries About Misogyny</a>
-                            <p><b>VH1 tweeted Monday night to submit questions for singer Robin Thicke using the hashtag #AskThicke. </b>People on Twitter took the opportunity to question his treatment of women.</p>
-
-                            <?php echo $this->Html->image('user8.png'); ?> <span class="small-meta">Andrew Kaczynski</span> &nbsp;
-                            <?php echo $this->Html->image('time8.png'); ?> <span class="small-meta">15 minutes ago</span> &nbsp;
-                             <?php echo $this->Html->image('comment9.png'); ?> <span class="small-meta">4 responses</span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <?php echo $this->Html->image('mini_img/demo1.jpg')?>
-                        </td>
-                        <td>
-                            <a href="#" class="title">Robin Thicke’s Planned Q&A Session On Twitter Flooded With Queries About Misogyny</a>
-                            <p><b>VH1 tweeted Monday night to submit questions for singer Robin Thicke using the hashtag #AskThicke. </b>People on Twitter took the opportunity to question his treatment of women.</p>
-
-                            <?php echo $this->Html->image('user8.png'); ?> <span class="small-meta">Andrew Kaczynski</span> &nbsp;
-                            <?php echo $this->Html->image('time8.png'); ?> <span class="small-meta">15 minutes ago</span> &nbsp;
-                             <?php echo $this->Html->image('comment9.png'); ?> <span class="small-meta">4 responses</span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <?php echo $this->Html->image('mini_img/demo1.jpg')?>
-                        </td>
-                        <td>
-                            <a href="#" class="title">Robin Thicke’s Planned Q&A Session On Twitter Flooded With Queries About Misogyny</a>
-                            <p><b>VH1 tweeted Monday night to submit questions for singer Robin Thicke using the hashtag #AskThicke. </b>People on Twitter took the opportunity to question his treatment of women.</p>
-
-                            <?php echo $this->Html->image('user8.png'); ?> <span class="small-meta">Andrew Kaczynski</span> &nbsp;
-                            <?php echo $this->Html->image('time8.png'); ?> <span class="small-meta">15 minutes ago</span> &nbsp;
-                             <?php echo $this->Html->image('comment9.png'); ?> <span class="small-meta">4 responses</span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <?php echo $this->Html->image('mini_img/demo1.jpg')?>
-                        </td>
-                        <td>
-                            <a href="#" class="title">Robin Thicke’s Planned Q&A Session On Twitter Flooded With Queries About Misogyny</a>
-                            <p><b>VH1 tweeted Monday night to submit questions for singer Robin Thicke using the hashtag #AskThicke. </b>People on Twitter took the opportunity to question his treatment of women.</p>
-
-                            <?php echo $this->Html->image('user8.png'); ?> <span class="small-meta">Andrew Kaczynski</span> &nbsp;
-                            <?php echo $this->Html->image('time8.png'); ?> <span class="small-meta">15 minutes ago</span> &nbsp;
-                             <?php echo $this->Html->image('comment9.png'); ?> <span class="small-meta">4 responses</span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <?php echo $this->Html->image('mini_img/demo1.jpg')?>
-                        </td>
-                        <td>
-                            <a href="#" class="title">Robin Thicke’s Planned Q&A Session On Twitter Flooded With Queries About Misogyny</a>
-                            <p><b>VH1 tweeted Monday night to submit questions for singer Robin Thicke using the hashtag #AskThicke. </b>People on Twitter took the opportunity to question his treatment of women.</p>
-
-                            <?php echo $this->Html->image('user8.png'); ?> <span class="small-meta">Andrew Kaczynski</span> &nbsp;
-                            <?php echo $this->Html->image('time8.png'); ?> <span class="small-meta">15 minutes ago</span> &nbsp;
-                             <?php echo $this->Html->image('comment9.png'); ?> <span class="small-meta">4 responses</span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <?php echo $this->Html->image('mini_img/demo1.jpg')?>
-                        </td>
-                        <td>
-                            <a href="#" class="title">Robin Thicke’s Planned Q&A Session On Twitter Flooded With Queries About Misogyny</a>
-                            <p><b>VH1 tweeted Monday night to submit questions for singer Robin Thicke using the hashtag #AskThicke. </b>People on Twitter took the opportunity to question his treatment of women.</p>
-
-                            <?php echo $this->Html->image('user8.png'); ?> <span class="small-meta">Andrew Kaczynski</span> &nbsp;
-                            <?php echo $this->Html->image('time8.png'); ?> <span class="small-meta">15 minutes ago</span> &nbsp;
-                             <?php echo $this->Html->image('comment9.png'); ?> <span class="small-meta">4 responses</span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <?php echo $this->Html->image('mini_img/demo1.jpg')?>
-                        </td>
-                        <td>
-                            <a href="#" class="title">Robin Thicke’s Planned Q&A Session On Twitter Flooded With Queries About Misogyny</a>
-                            <p><b>VH1 tweeted Monday night to submit questions for singer Robin Thicke using the hashtag #AskThicke. </b>People on Twitter took the opportunity to question his treatment of women.</p>
-
-                            <?php echo $this->Html->image('user8.png'); ?> <span class="small-meta">Andrew Kaczynski</span> &nbsp;
-                            <?php echo $this->Html->image('time8.png'); ?> <span class="small-meta">15 minutes ago</span> &nbsp;
-                             <?php echo $this->Html->image('comment9.png'); ?> <span class="small-meta">4 responses</span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <?php echo $this->Html->image('mini_img/demo1.jpg')?>
-                        </td>
-                        <td>
-                            <a href="#" class="title">Robin Thicke’s Planned Q&A Session On Twitter Flooded With Queries About Misogyny</a>
-                            <p><b>VH1 tweeted Monday night to submit questions for singer Robin Thicke using the hashtag #AskThicke. </b>People on Twitter took the opportunity to question his treatment of women.</p>
-
-                            <?php echo $this->Html->image('user8.png'); ?> <span class="small-meta">Andrew Kaczynski</span> &nbsp;
-                            <?php echo $this->Html->image('time8.png'); ?> <span class="small-meta">15 minutes ago</span> &nbsp;
-                             <?php echo $this->Html->image('comment9.png'); ?> <span class="small-meta">4 responses</span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <?php echo $this->Html->image('mini_img/demo1.jpg')?>
-                        </td>
-                        <td>
-                            <a href="#" class="title">Robin Thicke’s Planned Q&A Session On Twitter Flooded With Queries About Misogyny</a>
-                            <p><b>VH1 tweeted Monday night to submit questions for singer Robin Thicke using the hashtag #AskThicke. </b>People on Twitter took the opportunity to question his treatment of women.</p>
-
-                            <?php echo $this->Html->image('user8.png'); ?> <span class="small-meta">Andrew Kaczynski</span> &nbsp;
-                            <?php echo $this->Html->image('time8.png'); ?> <span class="small-meta">15 minutes ago</span> &nbsp;
-                             <?php echo $this->Html->image('comment9.png'); ?> <span class="small-meta">4 responses</span>
-                        </td>
-                    </tr>
+                    <?php
+                        if(!empty($homes_info)){
+                            foreach ($homes_info as $data) {
+                    ?>
+                                <tr>
+                                    <td>
+                                        <?php echo $this->Html->image('upload/'.$data['Post']['url'], array('height'=>83, 'width'=>125, 'url'=>array('controller'=>'News', 'action'=>'view', $data['Post']['id'], $this->Post->convertToEn($data['Post']['title']))))?>
+                                    </td>
+                                    <td align="justify">
+                                        <p>
+                                            <?php
+                                                echo $this->Html->link($data['Post']['title'], array('controller'=>'News', 'action'=>'view', $data['Post']['id'], $this->Post->convertToEn($data['Post']['title'])), array('class'=>'title'));
+                                                echo '<br>';
+                                                echo $data['Post']['summary'];
+                                            ?>
+                                        </p>
+                                        <?php
+                                            $user_info = $this->User->getUsername($data['Post']['user_id']);
+                                        ?>
+                                        <?php echo $this->Html->image('user16.png'); ?> <span class="small-meta"><?php echo $user_info['User']['fullname'] ?></span> &nbsp;
+                                        <?php echo $this->Html->image('time8.png'); ?> <span class="small-meta">15 minutes ago</span> &nbsp;
+                                         <?php echo $this->Html->image('comment9.png'); ?> <span class="small-meta">4 responses</span>
+                                    </td>
+                                </tr>
+                            <?php }} ?>
                 </tbody>
             </table>
+            <?php if ($this->Paginator->numbers()): ?>
+                <div >
+                    <ul class="pagination">
+                        <?php echo '<li>' . $this->Paginator->prev(__('<<'), array(), null, array('class' => 'prev disabled')) . '</li>'; ?>
+                        <?php echo $this->Paginator->numbers(array('tag' => 'li', 'separator' => '')); ?>
+                        <?php echo '<li>' . $this->Paginator->next(__('>>'), array(), null, array('class' => 'next disabled')) . '</li>'; ?>
+                    </ul>
+                </div>
+            <?php endif;?>
+
+            <!-- For Ads -->
+            <table class="table table-bordered" width="336" height="280">
+                Ads
+            </table>
         </div>
+        <!-- <div style="clear: both"></div> -->
         <div class="col-md-4">
-            <p class="head-title"><b>BuzzFeed News</b></p>
-            <?php echo $this->element('column2_home'); ?>
+            <p class="head-title"><b>izzFeed News</b></p>
+            <?php echo $this->element('column2_news', array('news' => $news_col)); ?>
         </div>
         <div class="col-md-2">
             <p class="head-title"><b>Trending</b></p>

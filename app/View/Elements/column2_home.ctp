@@ -1,103 +1,26 @@
+<?php
+    App::import('Model', 'User');
+    $this->User = new User();
+?>
 <table class="table">
     <tbody>
-        <tr>
-            <td>
-                <?php echo $this->Html->image('mini_img/demo2.jpg', array('width'=>340, 'height'=>120))?>
-                <a href="#" class="title-demo2">What Happened In Arizona On Nov. 16, 2010?</a>
-                <br>
-                <?php echo $this->Html->image('user8.png'); ?> <span class="small-meta">Andrew Kaczynski</span> &nbsp;
-                 <?php echo $this->Html->image('comment9.png'); ?> <span class="small-meta">4 responses</span>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <?php echo $this->Html->image('mini_img/demo2.jpg', array('width'=>340, 'height'=>120))?>
-                <a href="#" class="title-demo2">What Happened In Arizona On Nov. 16, 2010?</a>
-                <br>
-                <?php echo $this->Html->image('user8.png'); ?> <span class="small-meta">Andrew Kaczynski</span> &nbsp;
-                 <?php echo $this->Html->image('comment9.png'); ?> <span class="small-meta">4 responses</span>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <?php echo $this->Html->image('mini_img/demo2.jpg', array('width'=>340, 'height'=>120))?>
-                <a href="#" class="title">What Happened In Arizona On Nov. 16, 2010?</a>
-                <br>
-                <?php echo $this->Html->image('user8.png'); ?> <span class="small-meta">Andrew Kaczynski</span> &nbsp;
-                 <?php echo $this->Html->image('comment9.png'); ?> <span class="small-meta">4 responses</span>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <?php echo $this->Html->image('mini_img/demo2.jpg', array('width'=>340, 'height'=>120))?>
-                <a href="#" class="title">What Happened In Arizona On Nov. 16, 2010?</a>
-                <br>
-                <?php echo $this->Html->image('user8.png'); ?> <span class="small-meta">Andrew Kaczynski</span> &nbsp;
-                 <?php echo $this->Html->image('comment9.png'); ?> <span class="small-meta">4 responses</span>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <?php echo $this->Html->image('mini_img/demo2.jpg', array('width'=>340, 'height'=>120))?>
-                <a href="#" class="title">What Happened In Arizona On Nov. 16, 2010?</a>
-                <br>
-                <?php echo $this->Html->image('user8.png'); ?> <span class="small-meta">Andrew Kaczynski</span> &nbsp;
-                 <?php echo $this->Html->image('comment9.png'); ?> <span class="small-meta">4 responses</span>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <?php echo $this->Html->image('mini_img/demo2.jpg', array('width'=>340, 'height'=>120))?>
-                <a href="#" class="title">What Happened In Arizona On Nov. 16, 2010?</a>
-                <br>
-                <?php echo $this->Html->image('user8.png'); ?> <span class="small-meta">Andrew Kaczynski</span> &nbsp;
-                 <?php echo $this->Html->image('comment9.png'); ?> <span class="small-meta">4 responses</span>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <?php echo $this->Html->image('mini_img/demo2.jpg', array('width'=>340, 'height'=>120))?>
-                <a href="#" class="title">What Happened In Arizona On Nov. 16, 2010?</a>
-                <br>
-                <?php echo $this->Html->image('user8.png'); ?> <span class="small-meta">Andrew Kaczynski</span> &nbsp;
-                 <?php echo $this->Html->image('comment9.png'); ?> <span class="small-meta">4 responses</span>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <?php echo $this->Html->image('mini_img/demo2.jpg', array('width'=>340, 'height'=>120))?>
-                <a href="#" class="title">What Happened In Arizona On Nov. 16, 2010?</a>
-                <br>
-                <?php echo $this->Html->image('user8.png'); ?> <span class="small-meta">Andrew Kaczynski</span> &nbsp;
-                 <?php echo $this->Html->image('comment9.png'); ?> <span class="small-meta">4 responses</span>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <?php echo $this->Html->image('mini_img/demo2.jpg', array('width'=>340, 'height'=>120))?>
-                <a href="#" class="title">What Happened In Arizona On Nov. 16, 2010?</a>
-                <br>
-                <?php echo $this->Html->image('user8.png'); ?> <span class="small-meta">Andrew Kaczynski</span> &nbsp;
-                 <?php echo $this->Html->image('comment9.png'); ?> <span class="small-meta">4 responses</span>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <?php echo $this->Html->image('mini_img/demo2.jpg', array('width'=>340, 'height'=>120))?>
-                <a href="#" class="title">What Happened In Arizona On Nov. 16, 2010?</a>
-                <br>
-                <?php echo $this->Html->image('user8.png'); ?> <span class="small-meta">Andrew Kaczynski</span> &nbsp;
-                 <?php echo $this->Html->image('comment9.png'); ?> <span class="small-meta">4 responses</span>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <?php echo $this->Html->image('mini_img/demo2.jpg', array('width'=>340, 'height'=>120))?>
-                <a href="#" class="title">What Happened In Arizona On Nov. 16, 2010?</a>
-                <br>
-                <?php echo $this->Html->image('user8.png'); ?> <span class="small-meta">Andrew Kaczynski</span> &nbsp;
-                 <?php echo $this->Html->image('comment9.png'); ?> <span class="small-meta">4 responses</span>
-            </td>
-        </tr>
+        <?php
+            if(!empty($news)){
+                foreach ($news as $data) {
+                    $this->Image->resize($data['Post']['url'], 340, 300);
+        ?>
+                    <tr>
+                        <td>
+                            <?php
+                                echo $this->Html->image('upload/'.'340x300_'.$data['Post']['url'], array('height'=>150, 'width'=>340, 'url'=>array('controller'=>'News', 'action'=>'view', $data['Post']['id'], $this->Post->convertToEn($data['Post']['title']))));
+
+                                echo $this->Html->link($data['Post']['title'], array('controller'=>'News', 'action'=>'view', $data['Post']['id'], $this->Post->convertToEn($data['Post']['title'])), array('class'=>'title-demo2'));
+                            ?>
+                                <br>
+                            <?php echo $this->Html->image('user8.png'); ?> <span class="small-meta"><?php echo $this->User->getUsernameById($data['Post']['user_id']) ?></span> &nbsp;
+                            <?php echo $this->Html->image('comment9.png'); ?> <span class="small-meta">4 responses</span>
+                        </td>
+                    </tr>
+                <?php }} ?>
     </tbody>
 </table>

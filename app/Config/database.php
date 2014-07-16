@@ -62,10 +62,10 @@ class DATABASE_CONFIG {
 	public $default = array(
 		'datasource' => 'Database/Mysql',
 		'persistent' => false,
-		'host' => 'localhost',
+		'host' => '192.168.1.224',
 		'login' => 'root',
 		'password' => '',
-		'database' => 'buzzfeed',
+		'database' => 'demo_test',
 		'prefix' => '',
 		//'encoding' => 'utf8',
 	);

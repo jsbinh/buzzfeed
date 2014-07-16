@@ -15,7 +15,7 @@ class PostsController extends AppController{
             'conditions' => array(
                 'delete_flg' => 0,
             ),
-            'limit' => 25,
+            'limit' => 20,
             'order' => array('Post.id' => 'desc')
         );
         $this->set('posts', $this->paginate());
@@ -31,7 +31,7 @@ class PostsController extends AppController{
         $user = $this->Session->read('user');
 
         $this->layout = 'backend';
-        $path_img = WWW_ROOT.'img\upload\\';
+        $path_img = WWW_ROOT.'img/upload/';
 
         if($this->request->is('post') || $this->request->is('put')){
             $data = $this->request->data;
@@ -83,7 +83,7 @@ class PostsController extends AppController{
         $user = $this->Session->read('user');
 
         $this->layout = 'backend';
-        $path_img = WWW_ROOT.'img\upload\\';
+        $path_img = WWW_ROOT.'img/upload/';
 
         if($this->request->is('post') || $this->request->is('put')){
             $data = $this->request->data;

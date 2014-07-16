@@ -188,3 +188,5 @@ define('ENTERTAINMENT', 2);
 define('LIFE', 3);
 define('VIDEOS', 4);
 define('FOREX', 5);
+
+// CakePlugin::load('Image');

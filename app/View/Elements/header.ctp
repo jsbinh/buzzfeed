@@ -36,7 +36,7 @@
                         <?php echo $this->Html->link('<b>ENTERTAINMENT</b>', array('controller'=>'Entertainments', 'action'=>'index'),array('escape'=>false,)) ?>
                     </li>
                     <li class="menu">
-                        <a href="#"><b>LIFE</b></a>
+                        <?php echo $this->Html->link('<b>LIFE</b>', array('controller'=>'Lifes', 'action'=>'index'),array('escape'=>false,)) ?>
                     </li>
                     <li class="menu">
                         <a href="#"><b>VIDEOS</b></a>

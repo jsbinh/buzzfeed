@@ -82,21 +82,13 @@
         <div u="slides" style=" position: absolute; left: 0px; top: 0px; width: 1800px; height: 150px; overflow: hidden;">
 
             <?php
-                App::uses('ImageResizer', 'Utility');
-                $tool = new ImageResizer();
-
                 if(!empty($info)){
                     foreach ($info as $data) {
-                        try{
-                            @$tool->prepare(WWW_ROOT.'img\upload\\'.$data['Post']['url']);
-                            @$tool->resize(200,150);
-                            @$tool->save(WWW_ROOT.'img\upload\\'.'slider'.$data['Post']['url']);
-                        }catch(Exception $e) {
-                            echo $e->getMessage();
-                        }
+                        //resize image
+                        $this->Image->resize($data['Post']['url'], 200, 150);
             ?>
                         <div>
-                            <?php echo $this->Html->image('upload/'.'slider'.$data['Post']['url'], array('width'=>200, 'height'=>150, 'u'=>'image', 'url'=>array('controller'=>'News', 'action'=>'view', $data['Post']['id'], $this->Post->convertToEn($data['Post']['title'])))) ?>
+                            <?php echo $this->Html->image('upload/'.'200x150_'.$data['Post']['url'], array('width'=>200, 'height'=>150, 'u'=>'image', 'url'=>array('controller'=>'News', 'action'=>'view', $data['Post']['id'], $this->Post->convertToEn($data['Post']['title'])))) ?>
                             <div>
                                 Testing...
                             </div>
