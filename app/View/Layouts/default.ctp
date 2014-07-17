@@ -50,18 +50,18 @@ $cakeDescription = 'izzFeed';
             'fields' => array('id', 'title', 'url')
         ));
 	?>
-	<div id="container">
-		<div id="header">
+	<div class="container">
+		<div class="header">
 			<?php echo $this->element('header'); ?>
             <?php echo $this->element('slider', array('info'=>$info)); ?>
 		</div>
 
-		<div id="content" style="padding-left: 15px; padding-right: 15px;">
+		<div class="content">
 			<?php echo $this->Session->flash(); ?>
-
 			<?php echo $this->fetch('content'); ?>
 		</div>
-		<div id="footer" style="padding-left: 15px; padding-right: 15px;">
+		<div style="clear:both"></div>
+		<div class="footer">
             <?php echo $this->element('footer'); ?>
 		</div>
 	</div>

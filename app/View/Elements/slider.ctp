@@ -65,7 +65,7 @@
 </script>
 
 
-<div class="container" style="margin-bottom: 5px; padding-left: 15px; padding-right: 15px;" >
+<div style="margin-bottom: 5px;" >
     <div id="slider1_container" style="position: relative; top: 0px; left: 0px; width: 1800px; height: 150px; overflow: hidden; ">
 
         <!-- Loading Screen -->

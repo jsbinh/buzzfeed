@@ -1,67 +1,16 @@
-<table class="table">
+<table class="table" width="190">
     <tbody>
         <tr>
             <td>
-                <?php echo $this->Html->image('mini_img/demo3.jpg', array('width'=>205, 'height'=>90))?>
+                <?php echo $this->Html->image('upload/200x150_1404869439israel.jpg', array('class'=>'img-responsive'))?>
             </td>
         </tr>
         <tr>
             <td>
-                <?php echo $this->Html->image('mini_img/demo3.jpg', array('width'=>205, 'height'=>90))?>
+                <a href="https://www.adcell.de/promotion/click/promoId/105218/slotId/65609" target="_blank" >
+                    <img src="https://www.adcell.de/promotion/image/promoId/105218/slotId/65609" width="230" height="200" border="0" alt="FLIP4NEW" class='img-responsive' />
             </td>
         </tr>
-        <tr>
-            <td>
-                <?php echo $this->Html->image('mini_img/demo3.jpg', array('width'=>205, 'height'=>90))?>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <?php echo $this->Html->image('mini_img/demo3.jpg', array('width'=>205, 'height'=>90))?>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <?php echo $this->Html->image('mini_img/demo3.jpg', array('width'=>205, 'height'=>90))?>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <?php echo $this->Html->image('mini_img/demo3.jpg', array('width'=>205, 'height'=>90))?>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <table class="table table-bordered" style="margin-bottom: 0px"  width="300" height="250">
-                    <tr>
-                        <td>
-                            <a href="https://www.adcell.de/promotion/click/promoId/105218/slotId/65609" target="_blank" >
-                                <img src="https://www.adcell.de/promotion/image/promoId/105218/slotId/65609" width="230" height="200" border="0" alt="FLIP4NEW" />
-                            </a>
-                        </td>
-                    </tr>
-                </table>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <?php echo $this->Html->image('mini_img/demo3.jpg', array('width'=>205, 'height'=>90))?>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <?php echo $this->Html->image('mini_img/demo3.jpg', array('width'=>205, 'height'=>90))?>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <?php echo $this->Html->image('mini_img/demo3.jpg', array('width'=>205, 'height'=>90))?>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <?php echo $this->Html->image('mini_img/demo3.jpg', array('width'=>205, 'height'=>90))?>
-            </td>
-        </tr>
+
     </tbody>
 </table>

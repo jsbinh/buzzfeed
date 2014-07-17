@@ -6,7 +6,6 @@
     $this->User = new User();
 
 ?>
-<div class="container">
     <div class="row">
         <div class="col-md-8" style="margin-bottom: 10px">
             <table class="">
@@ -93,4 +92,4 @@
             <?php echo $this->element('column3'); ?>
         </div>
     </div>
-</div>
+

@@ -6,14 +6,14 @@
     $this->User = new User();
 
 ?>
-<div class="container">
+
     <div class="row">
         <div class="col-md-8" style="margin-bottom: 10px">
             <table class="">
                 <tbody>
                     <tr>
                         <td>
-                            <div class="img-large" id="splash-overlay" style="padding-left: 20px;">
+                            <div class="img-large" id="splash-overlay">
                                 <?php
                                     echo $this->Html->image('upload/'.$newsest['Post']['url'], array('height'=>280, 'width'=>745, 'url'=>array('controller'=>'News', 'action'=>'view', $newsest['Post']['id'], $this->Post->convertToEn($newsest['Post']['title']))));
                                 ?>
@@ -42,7 +42,7 @@
         </div>
     </div>
     <div class="row-fluid sortable">
-        <div class="col-md-6">
+        <div class="col-md-6" style="padding-left: 0px">
             <!-- <p class="head-title">&nbsp;</p> -->
             <table class="table table-striped table-condensed">
                 <tbody>
@@ -93,9 +93,8 @@
             <p class="head-title"><b>izzFeed News</b></p>
             <?php echo $this->element('column2_news', array('news' => $news_col)); ?>
         </div>
-        <div class="col-md-2">
+        <div class="col-md-2" style="padding-left: 0px; padding-right: 0px">
             <p class="head-title"><b>Trending</b></p>
             <?php echo $this->element('column3'); ?>
         </div>
     </div>
-</div>

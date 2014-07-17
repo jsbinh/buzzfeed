@@ -272,3 +272,17 @@ div.title-img-large{
     font-size: 30px;
     font-weight: bold;
 }
+
+body{
+    background: #eee url("../img/main-back.png") repeat;
+}
+
+.container{
+    background-color: #F5F5F5;
+    box-shadow: 0 0 1px #000;
+}
+
+.footer{
+    border-top: 1px solid #bdbdbd;
+    padding-top: 10px;
+}
