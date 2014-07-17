@@ -4,6 +4,7 @@ App::uses('AppController', 'Controller');
 
 class EntertainmentsController extends AppController{
     public $uses = array('Post', 'Category');
+    public $helpers = array('Image');
 
     public function index(){
     	$this->paginate = array(

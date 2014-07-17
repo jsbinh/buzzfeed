@@ -62,7 +62,7 @@ $cakeDescription = 'izzFeed';
 			<?php echo $this->fetch('content'); ?>
 		</div>
 		<div id="footer" style="padding-left: 15px; padding-right: 15px;">
-
+            <?php echo $this->element('footer'); ?>
 		</div>
 	</div>
 </body>

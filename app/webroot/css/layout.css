@@ -252,3 +252,23 @@ div.title-img-large{
     margin-top: 15px;
     margin-bottom: 15px;
 }
+
+#footer{
+    background-color: #f2f2f2;
+    color: #777;
+    padding: 20px;
+    height: 180px;
+    margin-top: 20px;
+}
+
+.title-content{
+    font-family: 'Open Sans',Arial,Helvetica,Sans-Serif;
+    font-weight: 400;
+    margin-bottom: 20px;
+    font-size: 25px !important;
+}
+
+.title-top{
+    font-size: 30px;
+    font-weight: bold;
+}

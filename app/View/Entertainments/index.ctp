@@ -1,6 +1,9 @@
 <?php
-    App::import('Model', 'Post');
+    App::uses('ImageResizer', 'Utility');
+    $tool = new ImageResizer();
+    App::import('Model', array('Post', 'User'));
     $this->Post = new Post();
+    $this->User = new User();
 ?>
 <div class="container">
     <div class="row">

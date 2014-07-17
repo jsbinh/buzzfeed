@@ -1,8 +1,9 @@
 <?php
     App::uses('ImageResizer', 'Utility');
     $tool = new ImageResizer();
-    App::import('Model', 'Post');
+    App::import('Model', array('Post', 'User'));
     $this->Post = new Post();
+    $this->User = new User();
 
 ?>
 <div class="container">
@@ -14,12 +15,12 @@
                         <td>
                             <div class="img-large" id="splash-overlay" style="padding-left: 20px;">
                                 <?php
-                                    echo $this->Html->image('upload/'.$newsest['Post']['url'], array('height'=>280, 'width'=>745, 'url'=>array('controller'=>'News', 'action'=>'view', $newsest['Post']['id'], $this->Post->convertToEn($newsest['Post']['title']))));
+                                    echo $this->Html->image('upload/'.$newsest['Post']['url'], array('height'=>280, 'width'=>745, 'url'=>array('controller'=>'Lifes', 'action'=>'view', $newsest['Post']['id'], $this->Post->convertToEn($newsest['Post']['title']))));
                                 ?>
 
                                 <div class="title-img-large">
                                     <div class="splash-desc">
-                                        <?php echo $this->Html->link($newsest['Post']['title'], array('controller'=>'News', 'action'=>'view', $newsest['Post']['id'], $this->Post->convertToEn($newsest['Post']['title'])), array('class'=>'img_url')); ?>
+                                        <?php echo $this->Html->link($newsest['Post']['title'], array('controller'=>'Lifes', 'action'=>'view', $newsest['Post']['id'], $this->Post->convertToEn($newsest['Post']['title'])), array('class'=>'img_url')); ?>
                                     </div>
                                 </div>
                             </div>
