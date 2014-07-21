@@ -7,7 +7,7 @@
     <table class="table" style="margin-bottom: 0px">
         <tr>
             <td class="pull-right" style="padding: 1px;">
-                <a href="https://magneticexchange.com/?p=80316" title="Magnetic Exchange - Instant exchange Perfect Money, Solid Trust Pay, EgoPay, Payza, Yandex Money, Payweb, RedPass, and Paxum"><img src="http://ad.magneticexchange.com/en_728_90.gif" alt="Magnetic Exchange - Instant exchange Perfect Money, Solid Trust Pay, EgoPay, Payza, Yandex Money, Payweb, RedPass, and Paxum" /></a>
+                <iframe src="http://rcm-na.amazon-adsystem.com/e/cm?t=oriodeal0f-20&o=1&p=48&l=ur1&category=homeaudiohometheater&banner=1VPMRG9JVY8X1M8V2E82&f=ifr&linkID=US7U6FHVWESO4DZM" width="728" height="90" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe>
             </td>
         </tr>
     </table>
@@ -27,7 +27,7 @@
                 <?php echo $this->Html->link('<b>LIFE</b>', array('controller'=>'Lifes', 'action'=>'index'),array('escape'=>false,)) ?>
             </li>
             <li class="menu">
-                <a href="#"><b>VIDEOS</b></a>
+                <?php echo $this->Html->link('<b>VIDEOS</b>', array('controller'=>'Videos', 'action'=>'index'),array('escape'=>false,)) ?>
             </li>
             <li class="menu">
                 <a href="#"><b>FOREX INFO</b></a>

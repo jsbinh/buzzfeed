@@ -33,7 +33,7 @@
                 <tbody>
                     <tr>
                         <td width="336" height="280">
-                            Logo
+                            <SCRIPT charset="utf-8" type="text/javascript" src="http://ws-na.amazon-adsystem.com/widgets/q?rt=tf_ssw&ServiceVersion=20070822&MarketPlace=US&ID=V20070822%2FUS%2Foriodeal0f-20%2F8003%2F733a227a-91b7-4e6a-9bc2-752a2693a3c9&Operation=GetScriptTemplate"> </SCRIPT> <NOSCRIPT><A HREF="http://ws-na.amazon-adsystem.com/widgets/q?rt=tf_ssw&ServiceVersion=20070822&MarketPlace=US&ID=V20070822%2FUS%2Foriodeal0f-20%2F8003%2F733a227a-91b7-4e6a-9bc2-752a2693a3c9&Operation=NoScript">Amazon.com Widgets</A></NOSCRIPT>
                         </td>
                     </tr>
                 </tbody>

@@ -11,6 +11,5 @@
                     <img src="https://www.adcell.de/promotion/image/promoId/105218/slotId/65609" width="230" height="200" border="0" alt="FLIP4NEW" class='img-responsive' />
             </td>
         </tr>
-
     </tbody>
 </table>
