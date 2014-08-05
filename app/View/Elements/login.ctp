@@ -14,7 +14,7 @@
                             <?php echo $this->Form->input('username', array('type'=>'email', 'class'=>'form-control', 'id'=>'inputEmail3', 'style'=>'width:50%', 'placeholder'=>'Email', 'required'=>true, 'div'=>false, 'label'=>false)) ?>
                         </div>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group" style="margin-top: 10px">
                         <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
                         <div class="col-sm-10">
                             <?php echo $this->Form->input('password', array('type'=>'password', 'class'=>'form-control', 'id'=>'inputPassword3', 'style'=>'width:50%', 'placeholder'=>'Password', 'required'=>true, 'div'=>false, 'label'=>false)) ?>

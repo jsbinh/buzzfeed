@@ -5,7 +5,7 @@
     $this->Post = new Post();
     $this->User = new User();
 ?>
-<div class="row">
+<div class="row-fluid">
     <div class="col-md-8">
         <?php if(!empty($news)){ ?>
             <p class="post-title"><b>
@@ -13,7 +13,6 @@
             </b></p>
             <p class="description">
                 <b><?php echo $news['Post']['summary']; ?></b>
-                <span class="buzz_datetime">posted on <?php echo date('M j, Y', strtotime($news['Post']['date'])) ?>, at <?php echo date('g:i a', strtotime($news['Post']['date'])) ?></span>
             </p>
 
             <div class="author">
@@ -49,7 +48,7 @@
                     <?php echo $category . ' : ' . date("F d, Y", strtotime($news['Post']['date'])) ?>
                 </div>
             </div>
-
+            <div class="clearfix"></div>
 
             <div class="addthis_sharing_toolbox space_share"></div>
 
@@ -58,20 +57,21 @@
             </div>
 
             <div class="addthis_sharing_toolbox space_share"></div>
+
             <!-- Go to www.addthis.com/dashboard to customize your tools -->
             <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-53bbb04550725748"></script>
 
             <div class="fb-comments" data-href="http://forexpam.com" data-width="100%" data-numposts="5" data-colorscheme="light"></div>
-
 
         <?php } ?>
 
         <?php echo $this->element('column_ads_view') ?>
     </div>
     <div class="col-md-4">
-        <?php echo $this->element('column2', array('news'=>$news_col)) ?>
+        <?php echo $this->element('column2', array('news' => $news_col)) ?>
     </div>
 </div>
+
 
 
 <div id="fb-root"></div>

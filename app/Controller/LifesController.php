@@ -31,12 +31,21 @@ class LifesController extends AppController{
             ),
             'order' => array('Post.id' => 'desc')
         ));
+
         $this->set('news_col', $news_col);
         $this->set('newsest', $news_newsest);
         $this->set('news', $this->paginate());
     }
 
     public function view($id, $title = null) {
+        $news_col = $this->Post->find('all', array(
+            'conditions' => array(
+                'category_id' => LIFE,
+                'approved' => 1,
+            ),
+            'order' => array('Post.id' => 'desc')
+        ));
+
         $this->Post->id = $id;
         if(!$this->Post->exists()){
             $this->redirect(array('controller'=>'Homes', 'action'=>'index'));
@@ -51,5 +60,6 @@ class LifesController extends AppController{
     	$this->set('title_for_layout', $this->Post->convertToEn($news['Post']['title']));
     	$this->set('news', $news);
         $this->set('user', $user);
+        $this->set('news_col', $news_col);
 	}
 }

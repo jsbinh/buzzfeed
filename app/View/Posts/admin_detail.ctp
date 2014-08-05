@@ -32,7 +32,7 @@
                 <tr>
                     <td width="15%">Content</td>
                     <td>
-                        <?php echo $this->Form->textarea('content', array('class'=>'span9 ckeditor', 'div'=> false, 'label'=>false, 'style'=>'height: 277px; width: 643px;')) ?>
+                        <?php echo $this->Form->textarea('content', array('class'=>'span9 ckeditor', 'div'=> false, 'label'=>false, 'style'=>'height: 500px; width: 643px;')) ?>
                     </td>
                 </tr>
                 <tr>

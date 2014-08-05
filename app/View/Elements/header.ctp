@@ -1,36 +1,39 @@
-<div class="col-md-3">
-    <h1 class="logo">
-        <?php echo $this->Html->link('<b>izzFeed</b>', array('controller'=>'Homes', 'action'=>'index'), array('escape'=>false, 'style'=>'text-decoration: none')) ?>
-    </h1>
+<div class="row-fluid sortable">
+    <div class="col-md-3">
+            <?php echo $this->Html->link('<b>izzFeed</b>', array('controller'=>'Homes', 'action'=>'index'), array('escape'=>false, 'style'=>'text-decoration: none', 'class'=>'logo')) ?>
+    </div>
+    <div class="col-md-9">
+        <table class="table" style="margin-bottom: 0px">
+            <tr>
+                <td class="pull-right" style="padding: 1px;">
+                    <iframe src="http://rcm-na.amazon-adsystem.com/e/cm?t=oriodeal0f-20&o=1&p=48&l=ur1&category=homeaudiohometheater&banner=1VPMRG9JVY8X1M8V2E82&f=ifr&linkID=US7U6FHVWESO4DZM" width="728" height="90" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe>
+                </td>
+            </tr>
+        </table>
+    </div>
 </div>
-<div class="col-md-8">
-    <table class="table" style="margin-bottom: 0px">
-        <tr>
-            <td class="pull-right" style="padding: 1px;">
-                <iframe src="http://rcm-na.amazon-adsystem.com/e/cm?t=oriodeal0f-20&o=1&p=48&l=ur1&category=homeaudiohometheater&banner=1VPMRG9JVY8X1M8V2E82&f=ifr&linkID=US7U6FHVWESO4DZM" width="728" height="90" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe>
-            </td>
-        </tr>
-    </table>
-</div>
-<div style="clear:both"></div>
-<nav class="navbar navbar-default nav-pills" role="navigation" style="margin-bottom: 5px;">
+<div class="clearfix"></div>
+<nav class="navbar navbar-default" role="navigation" style="margin-bottom: 5px; margin-left:15px">
     <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse navbar-ex1-collapse">
+    <div class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
             <li class="menu">
-                <?php echo $this->Html->link('<b>NEWS</b>', array('controller'=>'News', 'action'=>'index'),array('escape'=>false,)) ?>
+                <?php echo $this->Html->link('<span> <i class="glyphicon glyphicon-globe"></i> <b>NEWS</b></span>', array('controller'=>'News', 'action'=>'index'),array('escape'=>false,)) ?>
             </li>
             <li class="menu">
-                <?php echo $this->Html->link('<b>ENTERTAINMENT</b>', array('controller'=>'Entertainments', 'action'=>'index'),array('escape'=>false,)) ?>
+                <?php echo $this->Html->link('<span><i class="glyphicon glyphicon-cloud"></i> <b>ENTERTAINMENT</b></span>', array('controller'=>'Entertainments', 'action'=>'index'),array('escape'=>false,)) ?>
             </li>
             <li class="menu">
-                <?php echo $this->Html->link('<b>LIFE</b>', array('controller'=>'Lifes', 'action'=>'index'),array('escape'=>false,)) ?>
+                <?php echo $this->Html->link('<span><i class="glyphicon glyphicon-heart-empty"> </i> <b>LIFE</b></span>', array('controller'=>'Lifes', 'action'=>'index'),array('escape'=>false,)) ?>
             </li>
             <li class="menu">
-                <?php echo $this->Html->link('<b>VIDEOS</b>', array('controller'=>'Videos', 'action'=>'index'),array('escape'=>false,)) ?>
+                <?php echo $this->Html->link('<span><i class="glyphicon glyphicon-sound-dolby"></i> <b>VIDEOS</b></span>', array('controller'=>'Videos', 'action'=>'index'),array('escape'=>false,)) ?>
             </li>
             <li class="menu">
-                <a href="#"><b>FOREX INFO</b></a>
+                <?php echo $this->Html->link('<span><i class="glyphicon glyphicon-star-empty"></i> <b>CULTURE</b></span>', array('controller'=>'Cultures', 'action'=>'index'),array('escape'=>false,)) ?>
+            </li>
+            <li class="menu">
+                <?php echo $this->Html->link('<span><i class="glyphicon glyphicon-gift"></i> <b>SCIENCE</b></span>', array('controller'=>'Sciences', 'action'=>'index'),array('escape'=>false,)) ?>
             </li>
         </ul>
         <ul class="nav navbar-nav navbar-right" style="padding-right: 10px">
@@ -76,7 +79,6 @@
   <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
   </script>
 
-    <div id="fb-root"></div>
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];

@@ -1,5 +1,7 @@
 @charset "UTF-8";
 
+@import url('http://fonts.googleapis.com/css?family=Oswald');
+
 .title{
 	color: #07e;
 	margin: 0;
@@ -70,13 +72,13 @@ a :hover{
 }
 
 .menu{
-    padding: 0 20px;
-    border-left: 1px solid #c2c2c2;
+    padding: 0 5px;
+    border-right: 1px solid #c2c2c2;
     float: left;
 }
 
 .logo{
-    float: left;
+    /*float: left;*/
     width: 240px;
     font-size: 70px;
     color: #0000FF;
@@ -187,40 +189,53 @@ div.fb-subscribe_btn {
     height: 20px;
 }
 
-div.title-img-large{
-    margin-top: -150px;
-    font-size: 40px;
+.title-img-large{
+    font-weight: bold;
+    font-size: 18px;
     line-height: 40px;
-    position: absolute;
-    right: 20px;
-    bottom: 10px;
-    background: rgb(255,255,255);
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
-    filter: alpha(opacity=50);
-    -moz-opacity: 0.5;
-    -khtml-opacity: 0.5;
-    opacity: 0.5;
-    width: 360px;
-    clear: none;
-    float: right;
+    background: #989898;
+}
+.title-img-large a{
+    color: #ddd !important;
 }
 
 .title-img-large:hover{
-    color: #FAFAFA !important;
-    margin-top: -150px;
-    font-size: 40px;
+    font-weight: bold;
+    font-size: 18px;
     line-height: 40px;
-    position: absolute;
-    right: 20px;
-    bottom: 10px;
-    background: #07e;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
-    filter: alpha(opacity=70);
-    -moz-opacity: 0.7;
-    -khtml-opacity: 0.7;
-    opacity: 0.7;
-    width: 360px;
-    text-decoration: none !important;
+    background: #989898;
+    /*opacity: 1.0;*/
+    color: red;
+    text-decoration: none;
+}
+
+.title-img-large:hover a:hover{
+    color: #fff !important;
+    text-decoration: none;
+}
+
+
+div.title-img{
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 20px;
+    background: #989898;
+}
+
+.title-img a{
+    color: #ddd !important;
+}
+
+div.title-img:hover{
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 20px;
+    background: #989898;
+}
+
+.title-img:hover a:hover{
+    color: #fff !important;
+    text-decoration: none;
 }
 
 .splash-overlay{
@@ -240,11 +255,11 @@ div.title-img-large{
 }
 
 .img_url{
-    color: #151515;
+    /*color: #151515;*/
 }
 
 .img_url:hover{
-    color: #FAFAFA;
+    /*color: #FAFAFA;*/
     text-decoration: none;
 }
 
@@ -277,12 +292,35 @@ body{
     background: #eee url("../img/main-back.png") repeat;
 }
 
-.container{
+.container-fluid{
     background-color: #F5F5F5;
     box-shadow: 0 0 1px #000;
+    width: 77%;
 }
 
 .footer{
     border-top: 1px solid #bdbdbd;
     padding-top: 10px;
+}
+
+.most-view-heading{
+    font: 28px "ProximaNovaBold",arial,sans-serif;
+    color: #ee3322;
+    margin-bottom: 15px;
+}
+
+.clearfix{
+    clear: both;
+}
+
+.navbar {
+    margin-top: 5px;
+    min-height: 40px;
+}
+
+.author {
+    color: #ee4723;
+    font-size: 1.6rem;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 400;
 }

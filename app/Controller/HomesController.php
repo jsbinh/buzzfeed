@@ -15,7 +15,7 @@ class HomesController extends AppController{
                 // 'category_id' => NEWS,
                 'approved' => 1,
             ),
-            'limit' => 10,
+            'limit' => 20,
             'order' => array('Post.id' => 'desc')
         );
 
@@ -32,9 +32,20 @@ class HomesController extends AppController{
                 'category_id' => NEWS,
                 'approved' => 1,
             ),
+            'limit' => 10,
             'order' => array('Post.id' => 'desc')
-       ));
+        ));
 
+        $column3 = $this->Post->find('all', array(
+            'conditions' => array(
+                // 'category_id' => NEWS,
+                'approved' => 1,
+            ),
+            'limit' => 10,
+            'order' => array('Post.id' => 'desc')
+        ));
+
+        $this->set('column3', $column3);
         $this->set('news_col', $news_col);
         $this->set('newsest', $news_newsest);
         $this->set('homes_info', $this->paginate());

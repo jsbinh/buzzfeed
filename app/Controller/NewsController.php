@@ -37,6 +37,15 @@ class NewsController extends AppController{
     }
 
     public function view($id, $title = null) {
+        $news_col = $this->Post->find('all', array(
+            'conditions' => array(
+                'category_id' => NEWS,
+                'approved' => 1,
+            ),
+            'limit' => 10,
+            'order' => array('Post.id' => 'desc')
+        ));
+
         $this->Post->id = $id;
         if(!$this->Post->exists()){
             $this->redirect(array('controller'=>'Homes', 'action'=>'index'));
@@ -50,6 +59,7 @@ class NewsController extends AppController{
         }
     	$this->set('title_for_layout', $this->Post->convertToEn($news['Post']['title']));
     	$this->set('news', $news);
+        $this->set('news_col', $news_col);
         $this->set('user', $user);
 	}
 }

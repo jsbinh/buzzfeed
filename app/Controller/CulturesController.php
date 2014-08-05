@@ -2,23 +2,23 @@
 
 App::uses('AppController', 'Controller');
 
-class VideosController extends AppController{
+class CulturesController extends AppController{
     public $uses = array('Post', 'Category', 'User', 'News');
     public $helpers = array('Image');
 
     public function index(){
     	$this->paginate = array(
             'conditions' => array(
-            	'category_id' => VIDEOS,
+            	'category_id' => CULTURE,
                 'approved' => 1,
             ),
-            'limit' => 13,
+            'limit' => 20,
             'order' => array('Post.id' => 'desc')
         );
 
-        $videos_newsest = $this->Post->find('first', array(
+        $cultures_newest = $this->Post->find('first', array(
             'conditions' => array(
-                'category_id' => VIDEOS,
+                'category_id' => CULTURE,
                 'approved' => 1,
             ),
             'order' => array('Post.id' => 'desc')
@@ -29,28 +29,38 @@ class VideosController extends AppController{
                 'category_id' => NEWS,
                 'approved' => 1,
             ),
+            'limit' => 10,
             'order' => array('Post.id' => 'desc')
         ));
-
         $this->set('column2', $column2);
-        $this->set('videos_newsest', $videos_newsest);
-        $this->set('news', $this->paginate());
+        $this->set('cultures_newest', $cultures_newest);
+        $this->set('cultures', $this->paginate());
     }
 
     public function view($id, $title = null) {
+        $column2 = $this->Post->find('all', array(
+            'conditions' => array(
+                'category_id' => SCIENCE,
+                'approved' => 1,
+            ),
+            'limit' => 10,
+            'order' => array('Post.id' => 'desc')
+        ));
+
         $this->Post->id = $id;
         if(!$this->Post->exists()){
             $this->redirect(array('controller'=>'Homes', 'action'=>'index'));
         }
-    	$news = $this->Post->findById($id);
+    	$cultures = $this->Post->findById($id);
         $user = array();
-        if(!empty($news)){
+        if(!empty($cultures)){
             App::import('Model', 'User');
             $this->User = new User();
-            $user = $this->User->getUsername($news['Post']['user_id']);
+            $user = $this->User->getUsername($cultures['Post']['user_id']);
         }
-    	$this->set('title_for_layout', $this->Post->convertToEn($news['Post']['title']));
-    	$this->set('news', $news);
+    	$this->set('title_for_layout', $this->Post->convertToEn($cultures['Post']['title']));
+    	$this->set('cultures', $cultures);
+        $this->set('column2', $column2);
         $this->set('user', $user);
 	}
 }

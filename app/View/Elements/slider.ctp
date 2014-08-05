@@ -1,4 +1,11 @@
 <script>
+    var size_page = 1140;
+    $(document).ready(function(){
+        window.onresize = function(event) {
+            // alert($('#content-width').width());
+            size_page = $('#content-width').width() - 400;
+        };
+    }).trigger('onresize');
     jssor_slider1_starter = function (containerId) {
         var options = {
             $AutoPlay: false,                                    //[Optional] Whether to auto play, to enable slideshow, this option must be set to true, default value is false

@@ -29,7 +29,7 @@ $cakeDescription = 'izzFeed';
 	<?php
 		echo $this->Html->meta('icon');
 
-		echo $this->Html->css(array('bootstrap.min', 'font-awesome.min', 'layout'));
+		echo $this->Html->css(array('layout', 'bootstrap.min', 'font-awesome.min'));
         echo $this->Html->script(array('jquery', 'jquery-ui', 'bootstrap', 'jssor.core', 'jssor.slider', 'jssor.utils'));
 
 		echo $this->fetch('meta');
@@ -50,13 +50,13 @@ $cakeDescription = 'izzFeed';
             'fields' => array('id', 'title', 'url')
         ));
 	?>
-	<div class="container">
+	<div class="container-fluid">
 		<div class="header">
 			<?php echo $this->element('header'); ?>
-            <?php echo $this->element('slider', array('info'=>$info)); ?>
+            <?php //echo $this->element('slider', array('info'=>$info)); ?>
 		</div>
 
-		<div class="content">
+		<div class="content" id="content-width">
 			<?php echo $this->Session->flash(); ?>
 			<?php echo $this->fetch('content'); ?>
 		</div>

@@ -1,6 +1,6 @@
-<div class="container" style="margin-bottom: 100px; margin-top: 10px">
+<div style="margin-bottom: 100px; margin-top: 10px">
     <div class="row">
-        <div class="col-md-9">
+        <div class="col-md-8">
             <table>
                 <tr>
                     <td style="font-size:16px; line-height: 1.8" align="justify">
@@ -52,7 +52,7 @@
                 </tr>
             </table>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-4">
             <table class="table table-bordered table-responsive">
                 <tr>
                     <td>
