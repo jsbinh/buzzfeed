@@ -1,63 +1,70 @@
+<div class="alert-banner" id="welcomeNote">
+        <div class="close opens" onclick="hideWelcome();">Close X</div>
+        <div class="title oswald">YOU'RE PROBABLY NOTICING THINGS LOOK <span class="red">DIFFERENT</span> AROUND HERE RIGHT NOW.</div>
+    <div class="text opens">That's because we just launched the new and improved ViralNova.com, loaded with more writers, more stories, and better features than
+                      ever. It was time to step it up and take things to the next level. Thanks for being a part of it. YOU ROCK.</div>
+    <div class="tag oswald"><a href="/sign-up/" class="red">SIGN UP</a> TO HAVE OUR BEST ARTICLES DELIVERED DAILY TO YOUR INBOX FOR FREE.</div>
+</div>
+
+<div class="clearfix"></div>
+
 <div class="row-fluid sortable">
-    <div class="col-md-3">
-            <?php echo $this->Html->link('<b>izzFeed</b>', array('controller'=>'Homes', 'action'=>'index'), array('escape'=>false, 'style'=>'text-decoration: none', 'class'=>'logo')) ?>
+    <div class="col-md-3 logo">
+        <?php echo $this->Html->image('logo.png'); ?>
     </div>
-    <div class="col-md-9">
-        <table class="table" style="margin-bottom: 0px">
-            <tr>
-                <td class="pull-right" style="padding: 1px;">
-                    <iframe src="http://rcm-na.amazon-adsystem.com/e/cm?t=oriodeal0f-20&o=1&p=48&l=ur1&category=homeaudiohometheater&banner=1VPMRG9JVY8X1M8V2E82&f=ifr&linkID=US7U6FHVWESO4DZM" width="728" height="90" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe>
-                </td>
-            </tr>
-        </table>
+    <div class="col-md-5">
+        <?php echo $this->Form->create('Post', array('controller'=>'News', 'action'=>'search'), array('class'=>'navbar-form navbar-left', 'role'=>'form')); ?>
+            <div class="form-group">
+                <?php echo $this->Form->input('search', array('type'=>'text', 'placeholder'=>'what are you looking for?', 'class'=>'search form-control', 'div'=>false, 'label'=>false, 'style'=>'display:block-inline')); ?>
+            </div>
+
+            <?php echo $this->Form->end(); ?>
+    </div>
+    <div class="col-md-4">
+        <!-- Go to www.addthis.com/dashboard to customize your tools -->
+        <div class="addthis_sharing_toolbox pull-left" style="padding-top:40px; padding-left:20px"></div>
     </div>
 </div>
 <div class="clearfix"></div>
-<nav class="navbar navbar-default" role="navigation" style="margin-bottom: 5px; margin-left:15px">
+<nav class="navbar navbar-default" role="navigation" style="margin-bottom: 5px; margin-left:15px; background-color:#FFFFFF">
     <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse">
+    <div class="collapse navbar-collapse"  style="padding-left:0px; padding-right:0px; background-color:#F04723">
         <ul class="nav navbar-nav">
             <li class="menu">
-                <?php echo $this->Html->link('<span> <i class="glyphicon glyphicon-globe"></i> <b>NEWS</b></span>', array('controller'=>'News', 'action'=>'index'),array('escape'=>false,)) ?>
+                <?php echo $this->Html->link('<span> <i class="glyphicon glyphicon-th-list"></i> HOME</span>', array('controller'=>'Homes', 'action'=>'index'),array('escape'=>false,)) ?>
             </li>
             <li class="menu">
-                <?php echo $this->Html->link('<span><i class="glyphicon glyphicon-cloud"></i> <b>ENTERTAINMENT</b></span>', array('controller'=>'Entertainments', 'action'=>'index'),array('escape'=>false,)) ?>
+                <?php echo $this->Html->link('<span> <i class="glyphicon glyphicon-globe"></i> NEWS</span>', array('controller'=>'News', 'action'=>'index'),array('escape'=>false,)) ?>
             </li>
             <li class="menu">
-                <?php echo $this->Html->link('<span><i class="glyphicon glyphicon-heart-empty"> </i> <b>LIFE</b></span>', array('controller'=>'Lifes', 'action'=>'index'),array('escape'=>false,)) ?>
+                <?php echo $this->Html->link('<span><i class="glyphicon glyphicon-cloud"></i> ENTERTAINMENT</span>', array('controller'=>'Entertainments', 'action'=>'index'),array('escape'=>false,)) ?>
             </li>
             <li class="menu">
-                <?php echo $this->Html->link('<span><i class="glyphicon glyphicon-sound-dolby"></i> <b>VIDEOS</b></span>', array('controller'=>'Videos', 'action'=>'index'),array('escape'=>false,)) ?>
+                <?php echo $this->Html->link('<span><i class="glyphicon glyphicon-heart-empty"> </i> LIFE</span>', array('controller'=>'Lifes', 'action'=>'index'),array('escape'=>false,)) ?>
             </li>
             <li class="menu">
-                <?php echo $this->Html->link('<span><i class="glyphicon glyphicon-star-empty"></i> <b>CULTURE</b></span>', array('controller'=>'Cultures', 'action'=>'index'),array('escape'=>false,)) ?>
+                <?php echo $this->Html->link('<span><i class="glyphicon glyphicon-sound-dolby"></i> VIDEOS</span>', array('controller'=>'Videos', 'action'=>'index'),array('escape'=>false,)) ?>
             </li>
             <li class="menu">
-                <?php echo $this->Html->link('<span><i class="glyphicon glyphicon-gift"></i> <b>SCIENCE</b></span>', array('controller'=>'Sciences', 'action'=>'index'),array('escape'=>false,)) ?>
+                <?php echo $this->Html->link('<span><i class="glyphicon glyphicon-star-empty"></i> CULTURE</span>', array('controller'=>'Cultures', 'action'=>'index'),array('escape'=>false,)) ?>
             </li>
-        </ul>
-        <ul class="nav navbar-nav navbar-right" style="padding-right: 10px">
-            <li style="margin-top: 14px">
-                <div class="fb-share-button" data-href="https://forexpam.com" data-type="button_count"></div>
+            <li class="menu">
+                <?php echo $this->Html->link('<span><i class="glyphicon glyphicon-gift"></i> SCIENCE</span>', array('controller'=>'Sciences', 'action'=>'index'),array('escape'=>false,)) ?>
             </li>
-
-            <li style="margin-top: 14px">
-                <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://forexpam.com" data-text="forexpam" data-via="buzzfeed" data-related="trocvuong">Tweet</a>
-            </li>
-            <li>
+            <li class="menu" align="center">
                 <?php if(!$this->Session->read('user')){ ?>
-                    <a href="#" data-toggle="modal" data-target="#login"> <?php echo $this->Html->image('user20.png') ?> </a>
+                    <a href="#" data-toggle="modal" data-target="#login"><span><i class="glyphicon glyphicon-user"></i> LOGIN</span></a>
                 <?php }else{ ?>
-                    <div class="btn-group" style="margin-top: 10px;">
-                        <button class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
-                        <a href="#"> <?php echo $this->Html->image('user20.png') ?> </a>
-                        </button>
+                    <div class="dropdown" style="margin-top: 10px; height: 40px;width: 87px; cursor: pointer;">
+
+                        <span data-toggle="dropdown" class="dropdown-toggle dropdown-list"><i class="glyphicon glyphicon-user"></i> INFO</span>
+                        <span class="caret"></span>
                         <ul class="dropdown-menu" role="menu">
                             <li>
                                 <?php echo $this->Html->link('<span class="glyphicon glyphicon-edit"></span> Profile', array('controller'=>'Users', 'action'=>'profile'), array('escape'=>false)) ?>
                             </li>
                             <li>
-                                <?php echo $this->Html->link('<span class="glyphicon glyphicon-fire"></span> Post', array('controller'=>'Posts', 'action'=>'index'), array('escape'=>false)) ?>
+                                <?php echo $this->Html->link('<span class="glyphicon glyphicon-fire"></span> Post', array('controller'=>'Posts', 'action'=>'add'), array('escape'=>false)) ?>
                             </li>
                             <li>
                                 <?php echo $this->Html->link('<span class="glyphicon glyphicon-log-out"></span> Change password', array('controller'=>'Users', 'action'=>'changepass'), array('escape'=>false)) ?>
@@ -67,10 +74,11 @@
                                 <?php echo $this->Html->link('<span class="glyphicon glyphicon-log-out"></span> Logout', array('controller'=>'Users', 'action'=>'logout'), array('escape'=>false)) ?>
                             </li>
                         </ul>
-                    </div>
+                    <!-- </div> -->
                 <?php } ?>
             </li>
         </ul>
+
     </div>
     <!-- /.navbar-collapse -->
 </nav>
@@ -79,11 +87,6 @@
   <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
   </script>
 
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.0";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-53bbb04550725748"></script>
+

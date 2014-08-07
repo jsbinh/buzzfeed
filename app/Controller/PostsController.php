@@ -141,8 +141,21 @@ class PostsController extends AppController{
         }
     }
 
-    public function admin_delete() {
+    public function admin_delete($id) {
+        $this->layout = 'backend';
 
+        if(!$this->Session->read('user')){
+            $this->redirect(array('controller' => 'users', 'action' => 'logout'));
+        }
+        $post = $this->Post->findById($id);
+
+        if(empty($post)){
+            $this->redirect(array('controller' => 'Posts', 'action' => 'index'));
+        }
+        if($this->Post->updateAll(array('Post.delete_flg' => 1), array('Post.id'=>$id))){
+            $this->Session->setFlash('Delete post successfull!', 'success');
+            $this->redirect(array('controller'=>'Posts', 'action' => 'index'));
+        }
     }
 
 }

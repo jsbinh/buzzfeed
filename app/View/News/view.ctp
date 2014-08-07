@@ -5,6 +5,9 @@
     $this->Post = new Post();
     $this->User = new User();
 ?>
+
+<?php echo $this->element('view_ads'); ?>
+
 <div class="row-fluid">
     <div class="col-md-8">
         <?php if(!empty($news)){ ?>
@@ -67,7 +70,7 @@
         <?php echo $this->element('column_ads_view') ?>
     </div>
     <div class="col-md-4">
-        <?php echo $this->element('column2', array('news' => $news_col)) ?>
+        <?php echo $this->element('column2_view', array('news' => $news_col)) ?>
     </div>
 </div>
 

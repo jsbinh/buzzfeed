@@ -1,4 +1,4 @@
-<table class="table" width="336" height="280">
+<table class="table">
     <tr>
         <td align="center">
             <iframe src="http://rcm-na.amazon-adsystem.com/e/cm?t=oriodeal0f-20&o=1&p=12&l=ur1&category=carelectronics&banner=18J4178WT5KAKCCXEGR2&f=ifr&linkID=DDLIWEOFRCJWWDUN" width="300" height="250" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe>

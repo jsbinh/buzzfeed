@@ -67,23 +67,31 @@ a :hover{
 }
 
 .title-demo2-medium:hover{
-    /*color: #E32;*/
     text-decoration: none !important;
 }
 
 .menu{
-    padding: 0 5px;
-    border-right: 1px solid #c2c2c2;
-    float: left;
+    color: #FFFFFF !important;
+    background-color: #F04723;
+    padding: 0 13.9px;
+    border-left: 1px solid #c2c2c2;
+    font-size: 1.6rem;
+    font-family: 'Oswald', sans-serif;
+}
+.menu:hover{
+    color: #F04723 !important;
+    background-color: #FEDD7A;
+    padding: 0 13.9px;
+    border-left: 1px solid #c2c2c2;
+    font-size: 1.6rem;
+    font-family: 'Oswald', sans-serif;
 }
 
 .logo{
-    /*float: left;*/
     width: 240px;
     font-size: 70px;
     color: #0000FF;
     height: 50px;
-    /*margin: 15px 0 0 0;*/
 }
 
 .table-edit{
@@ -295,7 +303,7 @@ body{
 .container-fluid{
     background-color: #F5F5F5;
     box-shadow: 0 0 1px #000;
-    width: 77%;
+    width: 79%;
 }
 
 .footer{
@@ -323,4 +331,104 @@ body{
     font-size: 1.6rem;
     font-family: 'Oswald', sans-serif;
     font-weight: 400;
+}
+
+.alert-banner{
+    width: 98%;
+    padding: 2px;
+    background: #FFF9F5;
+    border: solid 2px #ee4723 !important;
+    margin-top: 5px;
+    position: relative;
+    margin-left: 15px;
+}
+
+.logo {
+    /*background: url(/img/logo.png) no-repeat;*/
+    width: 232px;
+    height: 67px;
+    float: left;
+    margin: 10px 0;
+}
+
+.search{
+    background: #F5F5F5 url(/img/glass.png) no-repeat 96% 50% / 17px 17px !important;
+    float: left;
+    display: block;
+    width: 379px;
+    height: 34px;
+    margin: 26px 5%;
+}
+
+.dropdown-list:hover{
+    text-decoration: none !important;
+    background-color: #FEDD7A !important;
+}
+
+.pull-menu{
+    padding: 0 13.9px !important;
+}
+
+.column2{
+    background-color: #FFFFFF;
+}
+
+.white{
+    color: white;
+}
+
+.yellow{
+    color: yellow;
+}
+
+.signup-box {
+    font-family: 'Oswald', sans-serif !important;
+    height: 286px;
+    background: #464646;
+    text-align: center;
+    min-height: 252px;
+    padding: 8px;
+    width: 104%;
+    font-size: 1.4rem;
+    font-family: "Myriad Pro", sans-serif;
+}
+
+.signup-box h2 {
+    text-transform: uppercase;
+    line-height: 110%;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.signup-box .content {
+    color: #fff;
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+}
+
+.signup-box .signup input {
+    background-color: #ffffff;
+    margin-bottom: 10px;
+    text-align: center;
+    padding: 0 10px;
+    width: 261px;
+    height: 40px;
+    padding: 0 10px;
+}
+
+.signup button {
+    background-color: #fedd7a;
+    width: 143px;
+    height: 40px;
+}
+
+.signup button:hover {
+    color: #ee4723;
+    /*background-color: #ee4723;*/
+    width: 143px;
+    height: 40px;
+}
+
+.subcribing{
+    font-family: 'Oswald', sans-serif !important;
 }

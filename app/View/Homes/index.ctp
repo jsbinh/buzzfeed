@@ -14,7 +14,7 @@
         <?php echo $this->element('column1', array('metadata' => $homes_info)); ?>
 
     </div>
-    <div class="col-md-4">
+    <div class="col-md-4 column2" style="background-color:#FFFFFF">
         <?php echo $this->element('column2', array('news' => $news_col)); ?>
     </div>
 </div>

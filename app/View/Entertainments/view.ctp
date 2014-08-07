@@ -6,6 +6,9 @@
     $this->User = new User();
 
 ?>
+
+<?php echo $this->element('view_ads'); ?>
+
 <div class="row">
     <div class="col-md-8">
         <?php if(!empty($news)){ ?>

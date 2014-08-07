@@ -12,7 +12,6 @@ class HomesController extends AppController{
 
         $this->paginate = array(
             'conditions' => array(
-                // 'category_id' => NEWS,
                 'approved' => 1,
             ),
             'limit' => 20,

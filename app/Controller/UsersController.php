@@ -3,7 +3,7 @@
 App::uses('AppController', 'Controller');
 
 class UsersController extends AppController{
-    public $uses = array('User');
+    public $uses = array('User', 'EmailSubscribing', 'Post');
 
     public function index(){
 
@@ -42,11 +42,37 @@ class UsersController extends AppController{
 
 
     public function profile() {
-        
+
     }
 
     public function changepass() {
 
+    }
+
+    public function register(){
+        if($this->request->is('post') || $this->request->is('put')){
+            pr($this->request->data);exit;
+        }
+    }
+
+    public function addEmail(){
+        $news_col = $this->Post->find('all', array(
+            'conditions' => array(
+                'category_id' => NEWS,
+                'approved' => 1,
+            ),
+            'limit' => 10,
+            'order' => array('Post.id' => 'desc')
+        ));
+
+        if($this->request->is('post') || $this->request->is('put')){
+            if(!empty($this->request->data)){
+                $this->EmailSubscribing->create();
+                $this->EmailSubscribing->save($this->request->data);
+            }
+        }
+
+        $this->set('news_col', $news_col);
     }
 
 }
