@@ -1,14 +1,13 @@
 <div style="clear:both"></div>
 <div class="row">
-    <div class="col-md-3">
+    <div class="col-md-4">
         <p>
-            <a href="#" rel="nofollow" title="Bootply on Twitter" target="ext">Twitter</a><br>
-            <a href="#" rel="publisher">Google+</a><br>
-            <a href="#" rel="nofollow" title="Bootply on Facebook" target="ext">Facebook</a><br>
-            <!-- <a href="https://github.com/iatek/bootply" title="Bootply on GitHub" target="ext">GitHub</a><br> -->
+            <a href="https://twitter.com/IzzFeed" rel="nofollow" title="Bootply on Twitter" target="ext">Twitter</a><br>
+            <a href="https://plus.google.com/u/0/111318449808108256836/posts" rel="publisher" target="ext">Google+</a><br>
+            <a href="http://www.facebook.com/izzfeed" rel="nofollow" title="Bootply on Facebook" target="ext">Facebook</a><br>
         </p>
     </div>
-    <div class="col-md-3">
+    <div class="col-md-4">
         <p>
             <?php
                 echo $this->Html->link('Submit Content', array('controller'=>'Policys', 'action'=>'submitContent'));
@@ -21,16 +20,8 @@
             ?>
         </p>
     </div>
-    <div class="col-md-3">
-        <p>
-            <?php
-                echo $this->Html->link('Forexpam', 'http://forexpam.com');
-                echo '<br>';
-            ?>
-        </p>
-    </div>
-    <div class="col-md-3">
-        <span class="pull-right">©Copyright 2014 <a href="#" title="izzFeed Entertainment"></a></span>
+    <div class="col-md-4">
+        <span>©Copyright 2014 <a href="#" title="izzFeed Entertainment"></a></span>
     </div>
 </div>
 

@@ -38,10 +38,10 @@
                         ?>
                         <tr>
                             <td>
-                                <?php echo $this->User->getUsernameById(h($data['Post']['user_id'])); ?>
+                                <?php echo h($list_user[$data['Post']['user_id']]); ?>
                             </td>
                             <td>
-                                <?php echo h($data['Post']['category_id']) ?>
+                                <?php echo h($category[$data['Post']['category_id']]); ?>
                             </td>
                             <td>
                                 <?php echo h($data['Post']['title']) ?>
@@ -68,7 +68,7 @@
                                             'class' => 'btn btn-warning'),
                                             __('Do you want approved?'));
                                 }else{
-                                    echo '<p style="background-color:green; color:white">Approved</p>';
+                                    echo $this->Form->postLink('<i class="icon-remove icon-white"></i> Unapproved</span>',array('controller' => 'Posts', 'action' => 'unapproved', $data['Post']['id']), array('escape' => false, 'class' => 'btn btn-warning'), __('Do you want unapproved this account %s?', $data['Post']['id']));
                                 }
                                 ?>
                             </td>

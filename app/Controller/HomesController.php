@@ -20,7 +20,6 @@ class HomesController extends AppController{
 
         $news_newsest = $this->Post->find('first', array(
             'conditions' => array(
-                // 'category_id' => NEWS,
                 'approved' => 1,
             ),
             'order' => array('Post.id' => 'desc')
@@ -35,9 +34,10 @@ class HomesController extends AppController{
             'order' => array('Post.id' => 'desc')
         ));
 
+        $this->Session->write('news_col', $news_col);
+
         $column3 = $this->Post->find('all', array(
             'conditions' => array(
-                // 'category_id' => NEWS,
                 'approved' => 1,
             ),
             'limit' => 10,

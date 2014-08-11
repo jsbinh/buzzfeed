@@ -74,15 +74,15 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
                             <i class="icon-user"></i><span class="hidden-phone">
                                 <?php
                                     $user = $this->Session->read('user');
-                                    echo $user['User']['username'];
+                                    echo $user['User']['email'];
                                 ?></span>
                             <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">
-                            <li>
+                            <!-- <li>
                                 <?php //echo $this->Html->link('Change password', array('controller' => 'users', 'action' => 'changepassword')); ?>
-                            </li>
-                            <li class="divider"></li>
+                            </li> -->
+                            <!-- <li class="divider"></li> -->
                             <li>
                                 <?php echo $this->Html->link('Logout', array('controller' => 'users', 'action' => 'logout')); ?>
                             </li>
@@ -105,7 +105,22 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
                             <li class="nav-header hidden-tablet">Main</li>
                             <li>
                                 <?php
-                                echo $this->Html->link('<i class="icon-home"></i><span class="hidden-tablet"> Home</span>', array('controller' => 'index', 'action' => 'index'), array('escape' => false, 'class' => 'ajax-link', 'id' => 'index'));
+                                echo $this->Html->link('<i class="icon-home"></i><span class="hidden-tablet"> Post Manager</span>', array('controller' => 'index', 'action' => 'index'), array('escape' => false, 'class' => 'ajax-link', 'id' => 'index'));
+                                ?>
+                            </li>
+                            <li>
+                                <?php
+                                echo $this->Html->link('<i class="icon-refresh"></i><span class="hidden-tablet"> Send Email Subscribing</span>', array('controller' => 'index', 'action' => 'sendmail'), array('escape' => false, 'class' => 'ajax-link', 'id' => 'index'));
+                                ?>
+                            </li>
+                            <li>
+                                <?php
+                                echo $this->Html->link('<i class="icon-user"></i><span class="hidden-tablet"> Users Manager</span>', array('controller' => 'Users', 'action' => 'index'), array('escape' => false, 'class' => 'ajax-link', 'id' => 'index'));
+                                ?>
+                            </li>
+                            <li>
+                                <?php
+                                echo $this->Html->link('<i class="icon-camera"></i><span class="hidden-tablet"> Ads Manager</span>', array('controller' => 'Ads', 'action' => 'index'), array('escape' => false, 'class' => 'ajax-link', 'id' => 'index'));
                                 ?>
                             </li>
                         </ul>
@@ -133,7 +148,7 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
             <hr>
 
                 <footer>
-                    <p class="pull-left">&copy; <a href="http://forexpam.com" target="_blank">Forexpam</a> 2014</p>
+                    <p class="pull-left">&copy; <a href="http://izzfeed.com" target="_blank">izzFeed</a> 2014</p>
                 </footer>
 
         </div><!--/.fluid-container-->

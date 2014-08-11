@@ -96,9 +96,6 @@
             ?>
                         <div>
                             <?php echo $this->Html->image('upload/'.'200x150_'.$data['Post']['url'], array('width'=>200, 'height'=>150, 'u'=>'image', 'url'=>array('controller'=>'News', 'action'=>'view', $data['Post']['id'], $this->Post->convertToEn($data['Post']['title'])))) ?>
-                            <div>
-                                Testing...
-                            </div>
                         </div>
 
             <?php

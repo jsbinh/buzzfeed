@@ -53,7 +53,6 @@ $cakeDescription = 'izzFeed';
 	<div class="container-fluid">
 		<div class="header">
 			<?php echo $this->element('header'); ?>
-            <?php //echo $this->element('slider', array('info'=>$info)); ?>
 		</div>
 
 		<div class="content" id="content-width">

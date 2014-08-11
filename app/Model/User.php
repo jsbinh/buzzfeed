@@ -6,7 +6,7 @@ class User extends AppModel {
 
 
 	public $validate = array(
-            'username' => array(
+            'email' => array(
                 'notEmpty' => array(
                     'rule' => array('notEmpty')
                 )
@@ -25,14 +25,18 @@ class User extends AppModel {
 
     public function customValidate() {
         $validate = array(
-            'username' => array(
+            'email' => array(
                 'required' => array(
                     'rule' => 'notEmpty',
-                    'message' => __('Username is not empty!'),
+                    'message' => __('Email is exist!'),
                 ),
                 'unique' => array(
                     'rule' => array('isUnique'),
                     'message' => __('Username is not unique!'),
+                ),
+                'email' => array(
+                    'rule' => array('email'),
+                    'message' => __('Username is not email format!'),
                 ),
             ),
             'password' => array(
@@ -40,6 +44,10 @@ class User extends AppModel {
                     'rule' => 'notEmpty',
                     'message' => __('Password is not empty!'),
                 ),
+                'confirm' => array(
+                    'rule' => ('confirmPass'),
+                    'message' => __('These passwords don\'t match!'),
+                )
             ),
             'fullname' => array(
                 'required' => array(
@@ -78,5 +86,29 @@ class User extends AppModel {
             'fields' => array('id', 'fullname', 'image')
         ));
         return $user['User']['fullname'];
+    }
+
+    public function confirmPass(){
+        if($this->data['User']['password'] != $this->data['User']['confirmPassword'])
+            return false;
+        else
+            return true;
+    }
+
+    public function getAllUser(){
+        $users = $this->find('all', array(
+            'conditions' => array(
+                // 'User.delete_flg' => 0
+            ),
+            'fields' => array('id', 'fullname')
+        ));
+        $user_list = array();
+        if(!empty($users)){
+            foreach ($users as $value) {
+                $user_list[$value['User']['id']] = $value['User']['fullname'];
+            }
+        }
+
+        return $user_list;
     }
 }

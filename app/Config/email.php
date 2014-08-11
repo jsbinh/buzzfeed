@@ -42,12 +42,22 @@
  */
 class EmailConfig {
 
-	public $default = array(
-		'transport' => 'Mail',
-		'from' => 'you@localhost',
-		//'charset' => 'utf-8',
-		//'headerCharset' => 'utf-8',
-	);
+    public $default = array(
+        'host' => 'ssl://p3plcpnl0428.prod.phx3.secureserver.net',
+        'port' => 465,
+        'username' => 'admin@forexpam.com',
+        'password' => 'Sinh148@',
+        'transport' => 'Smtp',
+        'charset' => 'utf-8',
+        'headerCharset' => 'utf-8',
+    );
+
+	// public $default = array(
+	// 	'transport' => 'Mail',
+	// 	'from' => 'you@localhost',
+	// 	//'charset' => 'utf-8',
+	// 	//'headerCharset' => 'utf-8',
+	// );
 
 	public $smtp = array(
 		'transport' => 'Smtp',

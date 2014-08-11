@@ -73,7 +73,7 @@ a :hover{
 .menu{
     color: #FFFFFF !important;
     background-color: #F04723;
-    padding: 0 13.9px;
+    padding: 0 13px;
     border-left: 1px solid #c2c2c2;
     font-size: 1.6rem;
     font-family: 'Oswald', sans-serif;
@@ -81,7 +81,7 @@ a :hover{
 .menu:hover{
     color: #F04723 !important;
     background-color: #FEDD7A;
-    padding: 0 13.9px;
+    padding: 0 13px;
     border-left: 1px solid #c2c2c2;
     font-size: 1.6rem;
     font-family: 'Oswald', sans-serif;
@@ -297,7 +297,7 @@ div.title-img:hover{
 }
 
 body{
-    background: #eee url("../img/main-back.png") repeat;
+    /*background: #eee url("../img/main-back.png") repeat;*/
 }
 
 .container-fluid{
@@ -388,7 +388,7 @@ body{
     text-align: center;
     min-height: 252px;
     padding: 8px;
-    width: 104%;
+    width: 100%;
     font-size: 1.4rem;
     font-family: "Myriad Pro", sans-serif;
 }
@@ -431,4 +431,8 @@ body{
 
 .subcribing{
     font-family: 'Oswald', sans-serif !important;
+}
+
+.error-message{
+    color: #df1717;
 }

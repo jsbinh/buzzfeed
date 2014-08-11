@@ -20,28 +20,7 @@
                 <span class="buzz_datetime">posted on <?php echo date('M j, Y', strtotime($news['Post']['date'])) ?>, at <?php echo date('g:i a', strtotime($news['Post']['date'])) ?></span>
             </p>
 
-            <div class="c user-bg">
-                <div class="meta c">
-                    <div class="user-info">
-                        <div class="pull-left">
-                            <?php
-                                if(!empty($user)){
-                                    echo $this->Html->image('user16.png');
-                                    echo ' &nbsp;';
-                                    $user_info = $this->User->getUsername($news['Post']['user_id']);
-                                }
-                            ?>
-                        </div>
-
-                        <div class="user-info-info pull-right">
-                            <?php echo $user_info['User']['fullname']; ?>
-                            <!-- <span class="author_title">BuzzFeed Staff</span> -->
-
-                            <span class="ago">posted<time data-print="date" datetime="2014-07-08T04:44:48Z">about&nbsp;2&nbsp;hours&nbsp;ago</time></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            
 
 
         <div class="addthis_sharing_toolbox space_share"></div>

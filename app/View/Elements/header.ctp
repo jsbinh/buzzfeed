@@ -1,10 +1,10 @@
-<div class="alert-banner" id="welcomeNote">
+<!-- <div class="alert-banner" id="welcomeNote">
         <div class="close opens" onclick="hideWelcome();">Close X</div>
         <div class="title oswald">YOU'RE PROBABLY NOTICING THINGS LOOK <span class="red">DIFFERENT</span> AROUND HERE RIGHT NOW.</div>
     <div class="text opens">That's because we just launched the new and improved ViralNova.com, loaded with more writers, more stories, and better features than
                       ever. It was time to step it up and take things to the next level. Thanks for being a part of it. YOU ROCK.</div>
     <div class="tag oswald"><a href="/sign-up/" class="red">SIGN UP</a> TO HAVE OUR BEST ARTICLES DELIVERED DAILY TO YOUR INBOX FOR FREE.</div>
-</div>
+</div> -->
 
 <div class="clearfix"></div>
 
@@ -15,7 +15,7 @@
     <div class="col-md-5">
         <?php echo $this->Form->create('Post', array('controller'=>'News', 'action'=>'search'), array('class'=>'navbar-form navbar-left', 'role'=>'form')); ?>
             <div class="form-group">
-                <?php echo $this->Form->input('search', array('type'=>'text', 'placeholder'=>'what are you looking for?', 'class'=>'search form-control', 'div'=>false, 'label'=>false, 'style'=>'display:block-inline')); ?>
+                <?php echo $this->Form->input('search', array('type'=>'text', 'placeholder'=>'What are you looking for?', 'class'=>'search form-control', 'div'=>false, 'label'=>false, 'style'=>'display:block-inline')); ?>
             </div>
 
             <?php echo $this->Form->end(); ?>
@@ -26,7 +26,7 @@
     </div>
 </div>
 <div class="clearfix"></div>
-<nav class="navbar navbar-default" role="navigation" style="margin-bottom: 5px; margin-left:15px; background-color:#FFFFFF">
+<nav class="navbar navbar-default" role="navigation" style="margin-bottom: 5px; margin-left:15px; margin-right:15px !important; background-color:#FFFFFF">
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse"  style="padding-left:0px; padding-right:0px; background-color:#F04723">
         <ul class="nav navbar-nav">
@@ -55,7 +55,7 @@
                 <?php if(!$this->Session->read('user')){ ?>
                     <a href="#" data-toggle="modal" data-target="#login"><span><i class="glyphicon glyphicon-user"></i> LOGIN</span></a>
                 <?php }else{ ?>
-                    <div class="dropdown" style="margin-top: 10px; height: 40px;width: 87px; cursor: pointer;">
+                    <div class="dropdown" style="margin-top: 10px; height: 40px;width: 86px; cursor: pointer;">
 
                         <span data-toggle="dropdown" class="dropdown-toggle dropdown-list"><i class="glyphicon glyphicon-user"></i> INFO</span>
                         <span class="caret"></span>
@@ -90,3 +90,8 @@
 <!-- Go to www.addthis.com/dashboard to customize your tools -->
 <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-53bbb04550725748"></script>
 
+<script type="text/javascript">
+    function hideWelcome(){
+        $('#welcomeNote').hide();
+    }
+</script>

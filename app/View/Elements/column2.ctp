@@ -25,9 +25,13 @@
 
     <?php }} ?>
     <div align="center">
-        <a href="https://www.adcell.de/promotion/click/promoId/105218/slotId/65609" target="_blank" >
+        <?php
+            $ads = $this->Session->read('ads');
+            echo $ads['230x200'];
+        ?>
+        <!-- <a href="https://www.adcell.de/promotion/click/promoId/105218/slotId/65609" target="_blank" >
             <img src="https://www.adcell.de/promotion/image/promoId/105218/slotId/65609" width="230" height="200" border="0" alt="FLIP4NEW" class='img-responsive' />
-        </a>
+        </a> -->
         <br/>&nbsp;
     </div>
 </div>
