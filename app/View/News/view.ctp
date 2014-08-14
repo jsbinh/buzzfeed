@@ -1,6 +1,4 @@
 <?php
-    App::uses('ImageResizer', 'Utility');
-    $tool = new ImageResizer();
     App::import('Model', array('Post', 'User'));
     $this->Post = new Post();
     $this->User = new User();
@@ -15,7 +13,7 @@
                 <?php echo $news['Post']['title']; ?>
             </b></p>
             <p class="description">
-                <b><?php echo $news['Post']['summary']; ?></b>
+                <b><?php echo @$news['Post']['summary']; ?></b>
             </p>
 
             <div class="author">

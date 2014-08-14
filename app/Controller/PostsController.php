@@ -4,6 +4,7 @@ App::uses('AppController', 'Controller');
 
 class PostsController extends AppController{
     public $uses = array('Post', 'Category', 'User');
+    public $helpers = array('Image');
 
     public function index(){
         $this->redirect(array('controller'=>'Homes', 'action'=>'index'));
@@ -262,6 +263,29 @@ class PostsController extends AppController{
             $this->Session->setFlash('Delete post successfull!', 'success');
             $this->redirect(array('controller'=>'Posts', 'action' => 'index'));
         }
+    }
+
+    public function search(){
+        $news_col = $this->Post->find('all', array(
+            'conditions' => array(
+                'category_id' => NEWS,
+                'approved' => 1,
+            ),
+            'limit' => LIMIT_COLUMN2,
+            'order' => array('Post.id' => 'desc')
+        ));
+        if($this->request->is('post') || $this->request->is('put')){
+            $data = $this->request->data;
+            if(!empty($data['Post']['search'])){
+                $result = $this->Post->find('all', array(
+                    'conditions' => array(
+                        'Post.title LIKE' => '%'.$data['Post']['search'].'%'
+                    )
+                ));
+                $this->set('result', $result);
+            }
+        }
+        $this->set('news_col', $news_col);
     }
 
 }

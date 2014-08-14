@@ -12,7 +12,7 @@ class ForexesController extends AppController{
             	'category_id' => FOREX,
                 'approved' => 1,
             ),
-            'limit' => 13,
+            'limit' => LIMIT_PAGING,
             'order' => array('Post.id' => 'desc')
         );
 
@@ -37,7 +37,7 @@ class ForexesController extends AppController{
                 // 'category_id' => NEWS,
                 'approved' => 1,
             ),
-            'limit' => 10,
+            'limit' => LIMIT_COLUMN2,
             'order' => array('Post.id' => 'desc')
         ));
 

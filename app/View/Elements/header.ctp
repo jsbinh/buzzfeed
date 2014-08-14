@@ -13,9 +13,9 @@
         <?php echo $this->Html->image('logo.png'); ?>
     </div>
     <div class="col-md-5">
-        <?php echo $this->Form->create('Post', array('controller'=>'News', 'action'=>'search'), array('class'=>'navbar-form navbar-left', 'role'=>'form')); ?>
+        <?php echo $this->Form->create('Post', array('controller'=>'Posts', 'action'=>'search'), array('class'=>'navbar-form navbar-left', 'role'=>'form')); ?>
             <div class="form-group">
-                <?php echo $this->Form->input('search', array('type'=>'text', 'placeholder'=>'What are you looking for?', 'class'=>'search form-control', 'div'=>false, 'label'=>false, 'style'=>'display:block-inline')); ?>
+                <?php echo $this->Form->input('search', array('type'=>'text', 'placeholder'=>'What are you looking for?', 'class'=>'search form-control', 'div'=>false, 'label'=>false, 'style'=>'display:block-inline', 'required'=>true)); ?>
             </div>
 
             <?php echo $this->Form->end(); ?>

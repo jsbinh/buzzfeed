@@ -12,7 +12,7 @@ class VideosController extends AppController{
             	'category_id' => VIDEOS,
                 'approved' => 1,
             ),
-            'limit' => 13,
+            'limit' => LIMIT_PAGING,
             'order' => array('Post.id' => 'desc')
         );
 
@@ -29,6 +29,7 @@ class VideosController extends AppController{
                 'category_id' => NEWS,
                 'approved' => 1,
             ),
+            'limit' => LIMIT_COLUMN2,
             'order' => array('Post.id' => 'desc')
         ));
 

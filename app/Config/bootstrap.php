@@ -190,3 +190,6 @@ define('VIDEOS', 4);
 define('CULTURE', 5);
 define('SCIENCE', 6);
 // CakePlugin::load('Image');
+
+define('LIMIT_PAGING', 20);
+define('LIMIT_COLUMN2', 15);

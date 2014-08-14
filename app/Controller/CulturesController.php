@@ -12,7 +12,7 @@ class CulturesController extends AppController{
             	'category_id' => CULTURE,
                 'approved' => 1,
             ),
-            'limit' => 20,
+            'limit' => LIMIT_PAGING,
             'order' => array('Post.id' => 'desc')
         );
 
@@ -29,7 +29,7 @@ class CulturesController extends AppController{
                 'category_id' => NEWS,
                 'approved' => 1,
             ),
-            'limit' => 10,
+            'limit' => LIMIT_COLUMN2,
             'order' => array('Post.id' => 'desc')
         ));
         $this->set('column2', $column2);

@@ -1,10 +1,11 @@
 <?php
-    $metadata = array_chunk($metadata, 2);
     if(!empty($metadata)){
+        $metadata = array_chunk($metadata, 2);
         foreach ($metadata as $row) {
             echo '<div class="row-fluid clearfix">';
                 foreach ($row as $data) {
                     $this->Image->resize($data['Post']['url'], 340, 252);
+                    $this->Image->resize($data['Post']['url'], 642, 240);
 
                     echo '<div class="col-md-6">';
                         echo $this->Html->image('upload/340x252_'.$data['Post']['url'], array('class'=>'img-responsive', 'url'=>array('controller'=>'News', 'action'=>'view', $data['Post']['id'], $this->Post->convertToEn($data['Post']['title'])), 'width'=>'100%'));

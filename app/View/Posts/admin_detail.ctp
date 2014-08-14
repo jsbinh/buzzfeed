@@ -26,7 +26,7 @@
                <tr>
                     <td width="15%">Summary</td>
                     <td>
-                        <?php echo $this->Form->textarea('summary', array('class'=>'span9', 'div'=> false, 'label'=>false, 'required'=>true, 'style'=>'width:300; height:500')) ?>
+                        <?php echo $this->Form->textarea('summary', array('class'=>'span9', 'div'=> false, 'label'=>false, 'style'=>'width:300; height:500')) ?>
                     </td>
                </tr>
                 <tr>

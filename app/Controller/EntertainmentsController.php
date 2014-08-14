@@ -12,7 +12,7 @@ class EntertainmentsController extends AppController{
             	'category_id' => ENTERTAINMENT,
                 'approved' => 1,
             ),
-            'limit' => 5,
+            'limit' => LIMIT_PAGING,
             'order' => array('Post.id' => 'desc')
         );
 
@@ -28,7 +28,7 @@ class EntertainmentsController extends AppController{
                 'category_id' => NEWS,
                 'approved' => 1,
             ),
-            'limit' => 10,
+            'limit' => LIMIT_COLUMN2,
             'order' => array('Post.id' => 'desc')
         ));
 

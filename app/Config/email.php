@@ -42,15 +42,24 @@
  */
 class EmailConfig {
 
-    public $default = array(
-        'host' => 'ssl://p3plcpnl0428.prod.phx3.secureserver.net',
-        'port' => 465,
-        'username' => 'admin@forexpam.com',
-        'password' => 'Sinh148@',
+	public $default = array(
+	'host' => '192.168.1.220',
+        'port' => 25,
+        'username' => 'info@lev-vn.dev',
+        'password' => 'lev-vn',
         'transport' => 'Smtp',
-        'charset' => 'utf-8',
-        'headerCharset' => 'utf-8',
+        'emailName' => '', //set name for email
     );
+
+    // public $default = array(
+    //     'host' => 'ssl://p3plcpnl0428.prod.phx3.secureserver.net',
+    //     'port' => 465,
+    //     'username' => 'admin@forexpam.com',
+    //     'password' => 'Sinh148@',
+    //     'transport' => 'Smtp',
+    //     'charset' => 'utf-8',
+    //     'headerCharset' => 'utf-8',
+    // );
 
 	// public $default = array(
 	// 	'transport' => 'Mail',

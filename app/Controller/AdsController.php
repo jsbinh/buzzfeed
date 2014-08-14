@@ -4,6 +4,10 @@ App::uses('AppController', 'Controller');
 
 class AdsController extends AppController{
 
+    public function index(){
+        $this->redirect(array('controller'=>'Homes', 'action'=>'index'));
+    }
+
     public function admin_index(){
         $this->layout = 'backend';
 
@@ -20,7 +24,7 @@ class AdsController extends AppController{
             'conditions' => array(
                 // 'delete_flg' => 0,
             ),
-            'limit' => 20,
+            'limit' => LIMIT_PAGING,
             // 'order' => array('Ads.id' => 'desc')
         );
 

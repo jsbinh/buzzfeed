@@ -59,8 +59,8 @@ $cakeDescription = 'izzFeed';
 			<?php echo $this->Session->flash(); ?>
 			<?php echo $this->fetch('content'); ?>
 		</div>
-		<div style="clear:both"></div>
-		<div class="footer">
+		<div class="clearfix"></div>
+		<div class="footer clearfix">
             <?php echo $this->element('footer'); ?>
 		</div>
 	</div>

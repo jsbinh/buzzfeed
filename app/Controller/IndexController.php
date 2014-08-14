@@ -4,7 +4,7 @@ App::uses('AppController', 'Controller');
 App::uses('CakeEmail', 'Network/Email');
 
 class IndexController extends AppController{
-
+    public $helpers = array('Image');
 
     public function admin_index(){
         $this->redirect(array('controller'=>'Posts', 'action'=>'index'));
@@ -42,29 +42,42 @@ class IndexController extends AppController{
 
         $posts = $this->Post->find('all', array(
             'conditions' => array(
-                'DATE(Post.date) = CURDATE()',
-                'Post.approved' => 1
-            )
+                // 'DATE(Post.date) = CURDATE()',
+                'Post.approved' => 1,
+                'Post.send_email' => 0,
+            ),
+            'order' => array('Post.date' => 'desc')
         ));
         if(!empty($posts) && !empty($list_email)){
             foreach ($list_email as $email) {
-                //$this->_sendEmail($email, $posts);
+                $this->_sendEmail($email, $posts);
+            }
+            foreach ($posts as $key => $post) {
+                $this->Post->updateAll(array('Post.send_email'=>1), array('Post.id'=>$post['Post']['id']));
             }
         }
     }
 
     public function _sendEmail($email, $data){
-        $Email = new CakeEmail('default');
-        $subject = 'Contact from forexpam.com';
-        $content =
-            'Name: '.$data['Contact']['name'].'<br>'.
-            'Email: '.$data['Contact']['email'].'<br>'.
-            'Message: '.$data['Contact']['note'].'<br>';
-        $Email->emailFormat('html')
-                ->to($send_to_email)
-                ->from($send_to_email)
-                ->subject($subject)
-                ->send(nl2br($content));
-        $Email->reset();
+        $subject = $data[0]['Post']['title'];
+        if(filter_var($email, FILTER_VALIDATE_EMAIL)){
+            $Email = new CakeEmail('default');
+            $Email->reset();
+            $Email->viewVars(array('data' => $data));
+            $Email->template('sendemail');
+            $Email->emailFormat('html');
+            $Email->to($email);
+            $Email->from(array('newsletter@izzfeed.com'=>'IzzFeed Stories'));
+            $Email->subject($subject);
+
+            try{
+                $Email->send();
+            }catch(Exception $e){
+                $this->log( $e->getMessage(), 'error');
+            }
+        }else{
+            $this->log('Email errors'.$email, 'error');
+        }
+
     }
 }

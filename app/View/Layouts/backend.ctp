@@ -102,27 +102,36 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
                 <div class="span2 main-menu-span">
                     <div class="well nav-collapse sidebar-nav">
                         <ul class="nav nav-tabs nav-stacked main-menu">
-                            <li class="nav-header hidden-tablet">Main</li>
-                            <li>
-                                <?php
-                                echo $this->Html->link('<i class="icon-home"></i><span class="hidden-tablet"> Post Manager</span>', array('controller' => 'index', 'action' => 'index'), array('escape' => false, 'class' => 'ajax-link', 'id' => 'index'));
-                                ?>
-                            </li>
-                            <li>
-                                <?php
-                                echo $this->Html->link('<i class="icon-refresh"></i><span class="hidden-tablet"> Send Email Subscribing</span>', array('controller' => 'index', 'action' => 'sendmail'), array('escape' => false, 'class' => 'ajax-link', 'id' => 'index'));
-                                ?>
-                            </li>
-                            <li>
-                                <?php
-                                echo $this->Html->link('<i class="icon-user"></i><span class="hidden-tablet"> Users Manager</span>', array('controller' => 'Users', 'action' => 'index'), array('escape' => false, 'class' => 'ajax-link', 'id' => 'index'));
-                                ?>
-                            </li>
-                            <li>
-                                <?php
-                                echo $this->Html->link('<i class="icon-camera"></i><span class="hidden-tablet"> Ads Manager</span>', array('controller' => 'Ads', 'action' => 'index'), array('escape' => false, 'class' => 'ajax-link', 'id' => 'index'));
-                                ?>
-                            </li>
+                            <?php
+                            $user = $this->Session->read('user');
+                            if(!empty($user['User']['group'])){ ?>
+                                <li class="nav-header hidden-tablet">Main</li>
+                                <li>
+                                    <?php
+                                    echo $this->Html->link('<i class="icon-home"></i><span class="hidden-tablet"> Post Manager</span>', array('controller' => 'index', 'action' => 'index'), array('escape' => false, 'class' => 'ajax-link', 'id' => 'index'));
+                                    ?>
+                                </li>
+                                <li>
+                                    <?php
+                                    echo $this->Html->link('<i class="icon-refresh"></i><span class="hidden-tablet"> Send Email Subscribing</span>', array('controller' => 'index', 'action' => 'sendmail'), array('escape' => false, 'class' => 'ajax-link', 'id' => 'index'));
+                                    ?>
+                                </li>
+                                <li>
+                                    <?php
+                                    echo $this->Html->link('<i class="icon-user"></i><span class="hidden-tablet"> Users Manager</span>', array('controller' => 'Users', 'action' => 'index'), array('escape' => false, 'class' => 'ajax-link', 'id' => 'index'));
+                                    ?>
+                                </li>
+                                <li>
+                                    <?php
+                                    echo $this->Html->link('<i class="icon-camera"></i><span class="hidden-tablet"> Ads Manager</span>', array('controller' => 'Ads', 'action' => 'index'), array('escape' => false, 'class' => 'ajax-link', 'id' => 'index'));
+                                    ?>
+                                </li>
+                            <?php }else{
+                                echo '<li>';
+                                echo '&nbsp;';
+                                echo '</li>';
+                            }
+                            ?>
                         </ul>
                     </div><!--/.well -->
                 </div><!--/span-->

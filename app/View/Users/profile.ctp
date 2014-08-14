@@ -24,5 +24,5 @@
 </div>
 
 <div class="col-md-4">
-
+    <?php echo $this->element('column2_view', array('news' => $news_col)) ?>
 </div>

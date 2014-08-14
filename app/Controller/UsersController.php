@@ -6,7 +6,7 @@ class UsersController extends AppController{
     public $uses = array('User', 'EmailSubscribing', 'Post');
 
     public function index(){
-
+        $this->redirect(array('controller'=>'Homes', 'action'=>'index'));
     }
 
     public function login(){
@@ -46,6 +46,17 @@ class UsersController extends AppController{
             $this->redirect(array('controller'=>'Homes', 'action'=>'index'));
         }
         $user = $this->Session->read('user');
+        App::import('Model', 'Post');
+        $this->Post = new Post();
+        $news_col = $this->Post->find('all', array(
+            'conditions' => array(
+                'category_id' => NEWS,
+                'approved' => 1,
+            ),
+            'limit' => LIMIT_COLUMN2,
+            'order' => array('Post.id' => 'desc')
+        ));
+        $this->set('news_col', $news_col);
 
         if($this->request->is('post') || $this->request->is('put')){
             $data = $this->request->data;
@@ -67,6 +78,18 @@ class UsersController extends AppController{
         }
         $user = $this->Session->read('user');
 
+        App::import('Model', 'Post');
+        $this->Post = new Post();
+        $news_col = $this->Post->find('all', array(
+            'conditions' => array(
+                'category_id' => NEWS,
+                'approved' => 1,
+            ),
+            'limit' => LIMIT_COLUMN2,
+            'order' => array('Post.id' => 'desc')
+        ));
+        $this->set('news_col', $news_col);
+
         if($this->request->is('post') || $this->request->is('put')){
             $data = $this->request->data;
             if($this->User->customValidate()){
@@ -82,6 +105,19 @@ class UsersController extends AppController{
     }
 
     public function register(){
+
+        App::import('Model', 'Post');
+        $this->Post = new Post();
+        $news_col = $this->Post->find('all', array(
+            'conditions' => array(
+                'category_id' => NEWS,
+                'approved' => 1,
+            ),
+            'limit' => LIMIT_COLUMN2,
+            'order' => array('Post.id' => 'desc')
+        ));
+        $this->set('news_col', $news_col);
+
         if($this->request->is('post') || $this->request->is('put')){
             $data = $this->request->data;
             if($this->User->customValidate()){
@@ -131,7 +167,7 @@ class UsersController extends AppController{
             'conditions' => array(
                 'delete_flg' => 0,
             ),
-            'limit' => 20,
+            'limit' => LIMIT_PAGING,
             'order' => array('User.id' => 'desc')
         );
 
