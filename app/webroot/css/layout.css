@@ -352,7 +352,7 @@ body{
 }
 
 .search{
-    background: #F5F5F5 url(/img/glass.png) no-repeat 96% 50% / 17px 17px !important;
+    background: #FFF url(/img/glass.png) no-repeat 96% 50% / 17px 17px !important;
     float: left;
     display: block;
     width: 379px;
@@ -435,4 +435,11 @@ body{
 
 .error-message{
     color: #df1717;
+}
+.navbar-nav>li>a {
+    color: white !important;
+}
+
+.navbar-nav>li>a:hover {
+    color: #f04723 !important;
 }

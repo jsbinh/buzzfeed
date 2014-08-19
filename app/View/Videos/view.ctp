@@ -1,10 +1,11 @@
 <?php
-    App::uses('ImageResizer', 'Utility');
-    $tool = new ImageResizer();
     App::import('Model', array('Post', 'User'));
     $this->Post = new Post();
     $this->User = new User();
 ?>
+
+<?php echo $this->element('view_ads'); ?>
+
 <div class="row-fluid">
     <div class="col-md-8">
         <?php if(!empty($news)){ ?>
@@ -12,7 +13,7 @@
                 <?php echo $news['Post']['title']; ?>
             </b></p>
             <p class="description">
-                <b><?php echo $news['Post']['summary']; ?></b>
+                <b><?php echo @$news['Post']['summary']; ?></b>
             </p>
 
             <div class="author">
@@ -40,8 +41,7 @@
                                 break;
                         }
 
-                        $userinfo = $this->User->getUsername($news['Post']['user_id']);
-                        echo 'By '. $userinfo['User']['fullname'];
+                        echo 'By '. $user['User']['fullname'];
                     ?>
                 </div>
                 <div class="pull-right">
@@ -68,7 +68,7 @@
         <?php echo $this->element('column_ads_view') ?>
     </div>
     <div class="col-md-4">
-        <?php echo $this->element('column2', array('news' => $news_col)) ?>
+        <?php echo $this->element('column2_view', array('news' => $news_col)) ?>
     </div>
 </div>
 

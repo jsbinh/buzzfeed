@@ -10,11 +10,6 @@ class Post extends AppModel {
                     'rule' => array('notEmpty')
                 )
             ),
-            'summary' => array(
-                'notEmpty' => array(
-                    'rule' => array('notEmpty')
-                )
-            ),
             'content' => array(
                 'notEmpty' => array(
                     'rule' => array('notEmpty')
@@ -33,12 +28,6 @@ class Post extends AppModel {
                 'required' => array(
                     'rule' => 'notEmpty',
                     'message' => __('Title is not empty!'),
-                ),
-            ),
-            'summary' => array(
-                'required' => array(
-                    'rule' => 'notEmpty',
-                    'message' => __('Summary is not empty!'),
                 ),
             ),
             'content' => array(
