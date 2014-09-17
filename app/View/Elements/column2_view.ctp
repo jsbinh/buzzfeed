@@ -22,7 +22,6 @@
                                 echo $this->Html->link($data['Post']['title'], array('controller'=>'News', 'action'=>'view', $data['Post']['id'], $this->Post->convertToEn($data['Post']['title'])));
                             echo '</p>';
                         echo '</div>';
-                        // echo '<br><br><br>';
                     ?>
                 </div>
                 <?php
@@ -32,12 +31,11 @@
                 ?>
 
     <?php }} ?>
-    <div align="center">
+    <div>
         <?php
             $ads = $this->Session->read('ads');
             echo $ads['336x280'];
         ?>
-
         <br/>&nbsp;
     </div>
     <h4><b>Hey! Join Us On Facebook</b></h4>
