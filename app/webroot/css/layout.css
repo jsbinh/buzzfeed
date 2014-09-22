@@ -69,22 +69,43 @@ a :hover{
 .title-demo2-medium:hover{
     text-decoration: none !important;
 }
+.custom-nav{
+    background-color:#F04723;
+    width: 100%;
 
-.menu{
+}
+.collapse-custom{
+    padding-right:0px !important;
+    padding-left:0px !important;
+}
+.navbar-custom{
+    margin-left:15px !important;
+    margin-right:15px !important;
+}
+.custom-nav li{
+    padding-right: 2%;
+}
+.custom-nav li > a{
     color: #FFFFFF !important;
     background-color: #F04723;
-    padding: 0 13px;
     border-left: 1px solid #c2c2c2;
     font-size: 1.6rem;
     font-family: 'Oswald', sans-serif;
 }
-.menu:hover{
-    color: #F04723 !important;
+.custom-nav li:hover{
     background-color: #FEDD7A;
-    padding: 0 13px;
-    border-left: 1px solid #c2c2c2;
-    font-size: 1.6rem;
-    font-family: 'Oswald', sans-serif;
+}
+.custom-nav li > a:hover{
+    color: #F04723 !important;
+}
+.custom-nav>.open>a, .custom-nav>.open>a:hover, .custom-nav>.open>a:focus{
+    background-color: #FEDD7A !important;
+    color: #F04723 !important;
+}
+
+.dropdown-menu>li>a:hover{
+    background-color: #FEDD7A !important;
+    color: #F04723 !important;
 }
 
 .logo{
@@ -321,10 +342,10 @@ body{
     clear: both;
 }
 
-.navbar {
+/*.navbar {
     margin-top: 5px;
     min-height: 40px;
-}
+}*/
 
 .author {
     color: #ee4723;
@@ -353,11 +374,17 @@ body{
 
 .search{
     background: #FFF url(/img/glass.png) no-repeat 96% 50% / 17px 17px !important;
-    float: left;
-    display: block;
-    width: 379px;
-    height: 34px;
-    margin: 26px 5%;
+    /*padding-top: 30px !important;*/
+    /*float: left;*/
+    /*display: block;*/
+    /*width: 379px;
+    height: 34px;*/
+    margin: 26px;
+}
+
+.social-custom{
+    padding-top:30px;
+    padding-left:20px;
 }
 
 .dropdown-list:hover{
@@ -436,10 +463,25 @@ body{
 .error-message{
     color: #df1717;
 }
-.navbar-nav>li>a {
-    color: white !important;
-}
 
-.navbar-nav>li>a:hover {
-    color: #f04723 !important;
+
+/*-----------------------------------*/
+
+@media (max-width: 1300px) {
+    .custom-nav li{
+        padding-right: 0.5%;
+    }
+    .custom-nav li>a{
+        padding: 10px 5% 10px 5% !important;
+    }
+}
+@media (max-width: 910px) {
+    .custom-nav li>a{
+        font-size: 0.9em;
+    }
+}
+@media (max-width: 600px) {
+    .custom-nav li>a{
+        padding-left: 25px !important;
+    }
 }
